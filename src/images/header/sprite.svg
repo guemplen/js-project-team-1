@@ -1,0 +1,15 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="basket" viewBox="0 0 24 24">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M9 22c0.552 0 1-0.448 1-1s-0.448-1-1-1c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M20 22c0.552 0 1-0.448 1-1s-0.448-1-1-1c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path>
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.8" d="M1 1h4l2.68 13.39c0.091 0.46 0.342 0.874 0.708 1.168s0.823 0.451 1.292 0.442h9.72c0.469 0.009 0.927-0.147 1.293-0.442s0.616-0.708 0.708-1.168l1.6-8.39h-17"></path>
+</symbol>
+<symbol id="burger" viewBox="0 0 46 32">
+<path stroke-width="3.5556" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M44.444 11.259h-42.667"></path>
+<path stroke-width="3.5556" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M44.444 1.778h-42.667"></path>
+<path stroke-width="3.5556" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M44.444 20.741h-42.667"></path>
+<path stroke-width="3.5556" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M44.444 30.222h-42.667"></path>
+</symbol>
+</defs>
+</svg>
