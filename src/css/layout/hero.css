@@ -1,0 +1,153 @@
+.hero-section{
+max-width: 1280px;
+}
+
+.hero-wrapper {
+    margin-top: 10px;
+    display: flex;
+}
+
+.slide-wrapper {
+    padding-top: 94px;
+    display: flex !important;
+}
+
+.hero-div{
+margin-top: 166px;
+margin-right: 32px;
+padding-left: 100px;
+
+}
+
+.slick-slider{
+    width: 895px;
+}
+
+.slick-slide{
+    overflow: hidden;
+    column-gap: 16px;
+    border-radius: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.hero-cook-ph-div{
+    width: 182px;
+    display: flex !important;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.photo-cook{
+    object-fit: cover;
+}
+
+.photo-dish-small{
+    padding-right: 20px;
+    border-radius: 15px;
+    object-fit:contain;
+}
+
+.hero-small-ph-div{
+    text-align: center;
+    position: relative;
+    background: radial-gradient(circle, var(--green), 10%, var(--black));
+}
+
+.photo-dish-big{
+    object-fit: cover;
+    background-color: black;
+}
+
+.hero-main-txt{
+
+    width: 446px;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 43.2px;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.hero-txt-span-decoration{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--green);
+}
+
+.hero-additional-text{
+    padding-top: 16px;
+    padding-bottom: 32px;
+    width: 408px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--black);
+
+}
+
+.hero-order-btn{
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 500px;
+    color: var(--black);
+    border-radius: 15px;
+    border: 1px solid var(--green);
+}
+
+.hero-order-btn:hover{
+    color: var(--white);
+    background-color: var(--green);
+}
+
+.hero-order-btn:focus {
+    color: var(--white);
+    background-color: var(--green);
+}
+
+
+.hero-main-txt-slide{
+    position: absolute;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    text-transform: uppercase;
+    bottom: 54px;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    color: rgba(248, 248, 248, 0.60);
+}
+
+.hero-txt-slide{
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    bottom: 32px;
+    left: 142px;
+    color: rgba(248, 248, 248, 0.20);
+}
+
+.slick-dots button {
+border-radius: 50%;
+background-color: var(--black)!important;
+
+}
+.slick-dots li{
+margin: 0!important;
+
+}
+.slick-dots li button {
+width: 2px!important;
+height: 2px!important;
+}
+
+.slick-active button {
+background-color: var(--green)!important;
+}
+
+.slick-dots li button:before {
+display: none;
+}
+
