@@ -40,5 +40,21 @@
       <path d="M0 16c0 8.837 7.163 16 16 16s16-7.163 16-16S24.837 0 16 0 0 7.163 0 16zm29 0c0 7.18-5.82 13-13 13S3 23.18 3 16 8.82 3 16 3s13 5.82 13 13z"/>
       <path d="m22.086 20.914 2.829-2.829-8.914-8.914-8.914 8.914 2.828 2.828 6.086-6.086z"/>
 </symbol>
+
+<symbol id="cart" viewBox="0 0 36 32">
+<path stroke-width="2.7826" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M15.304 29.217c0 0.768-0.623 1.391-1.391 1.391s-1.391-0.623-1.391-1.391c0-0.768 0.623-1.391 1.391-1.391s1.391 0.623 1.391 1.391z"></path>
+<path stroke-width="2.7826" stroke-miterlimit="4" stroke-linecap="butt" stroke-linejoin="miter" d="M30.609 29.217c0 0.768-0.623 1.391-1.391 1.391s-1.391-0.623-1.391-1.391c0-0.768 0.623-1.391 1.391-1.391s1.391 0.623 1.391 1.391z"></path>
+<path stroke-width="2.7826" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" d="M2.783 1.391c0 0 2.376 0 4.425 0 0.663 0 1.234 0.468 1.364 1.118l1.072 5.358M9.643 7.868l2.655 13.274c0.13 0.65 0.701 1.118 1.364 1.118h15.798c0.667 0 1.239-0.473 1.366-1.127l2.245-11.61c0.166-0.858-0.492-1.655-1.366-1.655h-22.062z"></path>
+</symbol>
+<symbol id="burger" viewBox="0 0 31 32">
+<path fill="none" stroke="" stroke-width="2.4242" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M3.879 8.727h23.273"></path>
+<path fill="none" stroke="" stroke-width="2.4242" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M3.879 13.576h23.273"></path>
+<path fill="none" stroke="" stroke-width="2.4242" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M3.879 18.424h23.273"></path>
+<path fill="none" stroke="" stroke-width="2.4242" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="miter" d="M3.879 23.273h23.273"></path>
+</symbol>
+<symbol id="cross" viewBox="0 0 32 32">
+<path fill="none" stroke="#f8f8f8" stroke-width="2" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #f8f8f8)" d="M24 8l-16 16"></path>
+<path fill="none" stroke="#f8f8f8" stroke-width="2" stroke-miterlimit="4" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--color1, #f8f8f8)" d="M8 8l16 16"></path>
+</symbol>
 </defs>
 </svg>
