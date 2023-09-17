@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorits</title>
+</head>
+
+<body>
+    <header>
+        <!--Тут буде код header  -->
+        <!--   <load src="" />   -->
+
+    </header>
+    <main>
+        <!--favorites.html-->
+        <section>
+            <div class="favorites-hero container">
+                <picture class="favorites-hero-img">
+                    <source srcset="
+              ./images/favorites/desktop-favorites-1x.jpg 1x,
+              ./images/favorites/desktop-favorites-2x.jpg 2x
+            " media="(min-width:1200px)" />
+                    <source srcset="
+              ./images/favorites/tablet-favorites-1x.jpg 1x,
+              ./images/favorites/tablet-favorites-2x.jpg 2x
+            " media="(min-width:768px)" />
+                    <source srcset="
+              ./images/favorites/mobile-favorites-1x.jpg 1x,
+              ./images/favorites/mobile-favorites-2x.jpg 2x
+            " media="(min-width:375px)" />
+                    <source srcset="
+              ./images/favorites/mobile-favorites-1x.jpg 1x,
+              ./images/favorites/mobile-favorites-2x.jpg 2x
+            " media="(max-width:374px)" />
+                    <img class="favorites-hero-img" src="./images/favorites/mobile-favorites-1x.jpg"
+                        alt="card-favorites" />
+                </picture>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2 class="visually-hidden">Favorites</h2>
+
+                <div class="favorites-error visually-hidden">
+                    <svg class="favorites-error-icon" width="68" height="58">
+                        <use href="./images/favorites/sprite.svg#icon-chefs-hat"></use>
+                    </svg>
+                    <p class="favorites-error-text">
+                        It appears that you haven't added any recipes to your favorites yet. To
+                        get started, you can add recipes that you like to your favorites for
+                        easier access in the future.
+                    </p>
+                </div>
+
+                <div class="favorites-categories">
+                    <button class="favorites-btn fav-btn is-active" name="main-cat-btn">
+                        All categories
+                    </button>
+                </div>
+
+                <div class="favorites-list">
+                    <p>Тут будуть рецепти</p>
+                </div>
+
+                <div id="pagination" class="tui-pagination visually-hidden"></div>
+            </div>
+        </section>
+        <!--   <load src="./order-now-modal.html" />     -->
+        <!--   <load src="recipe-modal.html" />      -->
+
+
+
+    </main>
+
+</body>
+
+</html>
