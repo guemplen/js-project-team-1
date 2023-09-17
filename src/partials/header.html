@@ -1,3 +1,63 @@
-<svg class="icon">
-  <use href="./images/header/sprite.svg#basket"></use>
-</svg>
+<section class="head-section">
+  <div class="head-div container">
+    <nav class="head-nav">
+      <ul class="list site-nav-ul">
+        <li class="site-nav-li">
+          <a class="link site-nav-home" href="#">Home</a>
+        </li>
+        <li class="site-nav-li">
+          <a class="link site-nav-fav" href="#">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="logo">
+      <a href="#" class="link logo-link text">
+        <span class="logo-span text">tasty</span>treats.</a
+      >
+    </div>
+
+    <div class="btns">
+      <button class="btn" data-modal-open>
+        <svg class="cart" width="24" height="24">
+          <use href="./images/header/sprite.svg#cart"></use>
+        </svg>
+      </button>
+
+      <button
+        class="btn js-open-menu"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="burger" width="32" height="32">
+          <use href="./images/header/sprite.svg#burger"></use>
+        </svg>
+      </button>
+
+      <label class="switch">
+        <input type="checkbox" class="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- *MODAL* -->
+  <div class="backdrop">
+    <button class="btn" data-modal-open>
+      <svg class="cross js-close-menu" width="32" height="32">
+        <use href="./images/header/sprite.svg#cross"></use>
+      </svg>
+    </button>
+    <div class="modal-text-div">
+      <a class="link text modal-home" href="#">Home</a>
+      <a class="link text modal-fav" href="#">Favorites</a>
+    </div>
+    <div>
+      <label class="switch modal-switch">
+        <input type="checkbox" class="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</section>
