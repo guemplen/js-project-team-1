@@ -1,0 +1,83 @@
+.recipes-search {
+  margin-top: 200px;
+  margin-left: 100px;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.search-input {
+  display: flex;
+  width: 278px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 18px;
+  align-items: flex-start;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+.select-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.options {
+  color: black;
+  font-style: bold;
+}
+
+.select-time {
+  display: flex;
+  width: 119px;
+  padding: 14px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.select-country {
+  display: flex;
+  width: 147px;
+  padding: 14px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.select-ingredient {
+  display: flex;
+  width: 188px;
+  padding: 14px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 72px;
+  border-radius: 15px;
+  border: 1px solid rgba(5, 5, 5, 0.2);
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-box i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2e8028;
+}
+
+.search-box input {
+  padding-left: 30px;
+}

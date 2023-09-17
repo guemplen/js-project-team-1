@@ -1,0 +1,33 @@
+<body>
+    <section class="section" id="recipes">
+        <div class="recipes-search">
+            <form class="filter-form">
+                <label class="recipes-search-dir-search" for="search-text"></label>
+                <input type="text" class="search-input" name="Search" data-title="">
+    
+                <!-- <label class="recipes-search-dir-list" for="search-options"></label> -->
+                <div class="select-items">
+                    <select class="select-time" name="time" data-title="time">
+                        <option class="options" value="">No Time</option>
+                    </select>
+    
+                    <!-- <label class="recipes-search-dir-list" for="search-options"></label> -->
+                    <select class="select-country" name="country" data-title="area">
+                        <option class="options" value="">Empty</option>
+                    </select>
+    
+                    <!-- <label class="recipes-search-dir-list" for="search-options"></label> -->
+                    <select class="select-ingredient" name="ingredient" data-title="ingredient">
+                        <option class="options" value="">No Ingredient</option>
+                    </select>
+                </div>
+    
+            </form>
+
+            <div class="data"></div>
+        </div>
+    </section>
+
+    <script type="module" src="./js/filter.js"></script>
+</body>
+
