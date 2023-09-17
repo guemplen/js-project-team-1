@@ -38,23 +38,22 @@ function renderHero(data) {
     <h3 class="hero-main-txt-slide">${event.topic.name}</h3>
     <p class="hero-txt-slide">${event.topic.area}</p>
 </div>
-<div class="slick-slide"><img src="${event.topic.imgWebpUrl}"class="photo-dish-big" width=351px height=456/></div>
+<div class="slick-slide hero-big-ph-div"><img src="${event.topic.imgWebpUrl}"class="photo-dish-big" width=351px height=456/></div>
 </div>
 `;
     }).join(" ");
     
   
- refs.swiperContainer.innerHTML = markup;
+    refs.swiperContainer.innerHTML = markup;
 
 
     $(".js-swiper-container").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 300000,
-    dots: true,
-    infinite: true,
-    draggable: true,
-});
-};
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 300000,
+        dots: true,
+        draggable: true,
+    });
+}
