@@ -20,7 +20,7 @@ padding-left: 100px;
 }
 
 .slick-slider{
-    width: 895px;
+    width: 795px;
 }
 
 .slick-slide{
@@ -34,6 +34,11 @@ padding-left: 100px;
 .hero-cook-ph-div{
     width: 182px;
     display: flex !important;
+    justify-content: center;
+    overflow: hidden;
+}
+.hero-big-ph-div{
+    width: 182px;
     justify-content: center;
     overflow: hidden;
 }
@@ -127,6 +132,10 @@ padding-left: 100px;
     bottom: 32px;
     left: 142px;
     color: rgba(248, 248, 248, 0.20);
+}
+
+.slick-dots{
+scale: 0.5;
 }
 
 .slick-dots button {
