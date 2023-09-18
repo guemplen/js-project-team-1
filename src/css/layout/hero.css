@@ -1,28 +1,26 @@
 @media screen and (min-width: 370px) {
 
-    .hero-container {
-        padding-left: 20px;
-            max-width: 375px;
-            overflow: hidden;
-        }
+    .container {
+        overflow: hidden;
+    }
 
    
     .hero-main-txt {
-            padding-top: 92px;
-            font-size: 26px;
-            font-weight: 600;
-            line-height: 32px;
-            text-transform: uppercase;
-            color: var(--black);
-        }
+        padding-top: 92px;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: var(--black);
+    }
 
     .hero-txt-span-decoration {
-            font-size: 26px;
-            font-style: italic;
-            font-weight: 400;
-            line-height: 32px;
-            color: var(--green);
-        }
+        font-style: italic;
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: 400;
+        color: var(--green);
+    }
 
 
 
@@ -49,22 +47,23 @@
         font-size: 14px;
         font-weight: 500px;
         border-radius: 12px;
+        background-color: transparent;
         color: var(--black);
         border: 1px solid var(--green);
     }
 
-        .hero-main-txt-slide {
+    .hero-main-txt-slide {
       
-            position: absolute;
-            font-size: 10px;
-            font-weight: 500;
-            line-height: 14px;
-            text-transform: uppercase;
-            bottom: 34px;
-            left: 0;
-            right: 0;
-            color: rgba(248, 248, 248, 0.60);
-        }
+        position: absolute;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        bottom: 34px;
+        left: 0;
+        right: 0;
+        color: rgba(248, 248, 248, 0.60);
+    }
 
     .hero-txt-slide {
         position: absolute;
@@ -231,11 +230,13 @@
     }
     
     .hero-big-ph-div {
-        border-radius: 15px;
         max-width: 351px;
 
     }
 
+    .photo-dish-big {
+        border-radius: 15px;
+    }
 
 }
 
