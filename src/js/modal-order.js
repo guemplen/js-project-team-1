@@ -1,6 +1,6 @@
 const closeOrderButton = document.querySelector('.js-cross-order');
 const orderNowModal = document.querySelector('.order-now-div');
-console.log(orderNowModal);
+// console.log(orderNowModal);
 closeOrderButton.addEventListener('click', () => {
   orderNowModal.style.display = 'none';
 });
