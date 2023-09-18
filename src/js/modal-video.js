@@ -59,19 +59,19 @@ function addContent(arr) {
     <div class="r-modal-rating-container"><div class="r-modal-rating">${rating.toFixed(1)}</div>
     <div class="r-modal-star-wrap">
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/star.svg#icon-star"></use>
+            <use href="../images/sprite.svg#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/star.svg#icon-star"></use>
+            <use href="../images/sprite.svg#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/star.svg#icon-star"></use>
+            <use href="../images/sprite.svg#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/star.svg#icon-star"></use>
+            <use href="../images/sprite.svg#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/star.svg#icon-star"></use>
+            <use href="../images/sprite.svg#icon-star"></use>
         </svg>
     </div>
     <div class="r-modal-time">${time} min</div></div></div>
