@@ -80,6 +80,8 @@
     .slide-wrapper {
         height: 280px;
         display: flex !important;
+        justify-content: center;
+        overflow: hidden;
     }
 
     .slick-slide:not(:last-child) {
@@ -128,6 +130,16 @@
         object-fit: cover;
         background-color: black;
     }
+    
+    .hero-container {
+        padding-left: 20px;
+        overflow: hidden;
+    }
+
+
+           
+
+
 
     /*//////////////////////DOTS//////////////*/
 
@@ -175,9 +187,9 @@
         padding-right: 32px;
     }
 
-    .hero-wrapper {
+    /* .hero-wrapper {
         padding-left: 32px;
-    }
+    } */
 
     .slide-wrapper {
         height: 442px;
@@ -236,6 +248,9 @@
 
     }
 
+    .photo-dish-big {
+    border-radius: 15px;
+    }
 
 }
 
@@ -248,12 +263,10 @@
 
 .hero-container {
     max-width: 1280px;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
-.hero-section{
-max-width: 1280px;
+ .hero-section{
+    max-width: 1280px;
 }
 
 .hero-wrapper {
