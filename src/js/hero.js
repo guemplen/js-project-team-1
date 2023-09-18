@@ -48,6 +48,7 @@ function renderHero(data) {
 
 
     $(".js-swiper-container").slick({
+        zIndex: 1,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,

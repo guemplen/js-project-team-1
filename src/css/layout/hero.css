@@ -6,6 +6,8 @@
 
    
     .hero-main-txt {
+        width: 344px;
+        padding-right: 20px;
         padding-top: 92px;
         font-size: 26px;
         font-weight: 600;
@@ -32,7 +34,7 @@
     }
 
     .hero-additional-text {
-        width: 335px;
+        width: 336px;
         padding-top: 14px;
         font-size: 14px;
         font-weight: 400;
@@ -55,7 +57,7 @@
     .hero-main-txt-slide {
       
         position: absolute;
-        font-size: 10px;
+        font-size: 9px;
         font-weight: 500;
         line-height: 14px;
         text-transform: uppercase;
@@ -71,8 +73,8 @@
         font-weight: 400;
         line-height: 12px;
         bottom: 14px;
-        left: 0;
-        right: 0;
+        left: 0!important;
+        right: 0!important;
         color: rgba(248, 248, 248, 0.20);;
         
     }
@@ -87,10 +89,15 @@
         overflow: hidden;
         margin-right: 8px;
     }
-        
+
+    .slick-prev{
+        display: none!important;
+    }
         
 
     .hero-cook-ph-div {
+        width: 180px;
+        margin-left: 7px;
         border-radius: 15px;
         display: flex !important;
         justify-content: center;
@@ -98,6 +105,7 @@
     }
 
     .hero-small-ph-div {
+        width: 400px;
         border-radius: 15px;
         display: flex !important;
         text-align: center;
@@ -105,39 +113,39 @@
         background: radial-gradient(circle, var(--green), 10%, var(--black));
     }
         
-        .hero-big-ph-div {
-        width: 122px;
+    .hero-big-ph-div {
+        max-width: 250px;
         display: flex !important;
         justify-content: center;
            
     }
         
     .photo-cook {
-        width: 122px;
+        border-radius: 15px;
+        width: 125px;
         object-fit: cover;
     }
         
     .photo-dish-small {
+        padding-bottom: 36px;
         width: 100%;
         object-fit: contain;
     }
         
     .photo-dish-big {
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
+        border-radius: 15px;
         width: 100%;
         object-fit: cover;
         background-color: black;
     }
     
     .hero-container {
-        padding-left: 20px;
-        overflow: hidden;
+        /* max-width: 375px;
+        overflow: hidden; */
     }
 
 
            
-
 
 
     /*//////////////////////DOTS//////////////*/
@@ -175,14 +183,13 @@
 
 
 
-/*///////TABLET///////////////*/
+/*//////////////TABLET///////////////*/
 
  @media screen and (min-width: 768px) {
 
     .hero-container{
         overflow: hidden!important;
         max-width: 768px;
-        padding-left: 32px;
         padding-right: 32px;
     }
 
@@ -196,6 +203,7 @@
     }
 
     .hero-main-txt {
+        padding-right: 0px;
         width: 448px;
         font-weight: 600;
         font-size: 36px;
@@ -208,6 +216,10 @@
         font-weight: 400;
         line-height: 120%;
         color: var(--green);
+    }
+
+    .hero-additional-text {
+        padding-top: 16px;
     }
 
     .hero-order-btn {
@@ -233,6 +245,8 @@
 
 
     .hero-cook-ph-div {
+        width: 130px;
+        margin-left: 4px;
         overflow: hidden;
     }
 
@@ -240,14 +254,13 @@
         width: 351px;
         overflow: hidden;
     }
-    
-    .hero-big-ph-div {
-        max-width: 351px;
-
-    }
 
     .photo-dish-big {
         border-radius: 15px;
+    }
+
+    .slick-dots{
+        width: 598px!important;
     }
 
 }
@@ -284,7 +297,7 @@
 }
 
 .slick-slider{
-    width: 680px;
+    width: 636px;
 }
 
 .slick-slide{
@@ -360,6 +373,7 @@
 }
 
 .hero-order-btn{
+    margin-top: 0px;
     padding: 14px 28px;
     font-size: 14px;
     font-weight: 500px;
@@ -391,8 +405,11 @@
     color: rgba(248, 248, 248, 0.20);
 }
 
+
+/*/////нижній марджин для крапочок під слайдером//////*/
+
 .slick-dots {
-margin-bottom: 45px!important;
+    margin-bottom: 20px!important;
 }
 
 }
