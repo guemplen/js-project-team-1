@@ -1,5 +1,6 @@
 import axios from 'axios';
 import debounce from 'lodash.debounce';
+import Notiflix from 'notiflix';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
@@ -51,7 +52,6 @@ function renderOptionsCountry(data) {
 }
 
 //---------------------------------------------------------  INGRIDIENTS
-
 tastyTreatsAPI
   .getIngridients()
   .then(response => renderOptionsIngridients(response.data))
@@ -67,6 +67,7 @@ function renderOptionsIngridients(data) {
     .join('');
   selectElIngridient.insertAdjacentHTML('beforeend', markup);
 }
+
 //---------------------------------------------------------  EVENTS
 function onDivSelectItems(event) {
   const { name, value } = event.target;
@@ -92,10 +93,13 @@ function onDivSelectItems(event) {
   tastyTreatsAPI.filterRecipes().then(response => {
     if (response.data.results.length === 0) {
       setTimeout(() => {
-        alert('Нет подходящего блюда');
+        Notiflix.Notify.failure(
+          'Sorry, no such recipe found. Please try again.'
+        );
       }, 500);
     }
     renderListItem(response.data.results);
+    console.log(tastyTreatsAPI);
   });
 }
 
@@ -104,7 +108,9 @@ const onInputChange = debounce(event => {
   tastyTreatsAPI.filterRecipes().then(response => {
     if (response.data.results.length === 0) {
       setTimeout(() => {
-        alert('Нет подходящего блюда');
+        Notiflix.Notify.failure(
+          'Sorry, no recipe was found for your request. Please try again.'
+        );
       }, 500);
     }
     renderListItem(response.data.results);
@@ -126,17 +132,37 @@ function renderListItem(data) {
                     <p class="recipes-list-item-text">${recipe.description}</p>
                       <div class="recipes-rating">
                         <div class="recipes-rating-value">${formattedRating}</div>
-                        <div class="recipes-rating-body">
-                            <div class="recipes-rating-active"></div>
-                            <div class="recipes-rating-items">
-                            <input type="radio" class="recipes-rating-item" value="1" name="rating">
-                            <input type="radio" class="recipes-rating-item" value="2" name="rating">
-                            <input type="radio" class="recipes-rating-item" value="3" name="rating">
-                            <input type="radio" class="recipes-rating-item" value="4" name="rating">
-                            <input type="radio" class="recipes-rating-item" value="5" name="rating">
-                          </div>
+                            <div class="recipes-rating-body">
+        <div class="recipes-rating-active"></div>
+        <div class="recipes-rating-items">
+            <div class="recipes-rating-item" data-value="1">
+                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+            <div class="recipes-rating-item" data-value="2">
+                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+            <div class="recipes-rating-item" data-value="3">
+                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+            <div class="recipes-rating-item" data-value="4">
+                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+            <div class="recipes-rating-item" data-value="5">
+                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                    <use href="./images/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
                         </div>
-                      </div>
                         <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
                     </div>
               </li>

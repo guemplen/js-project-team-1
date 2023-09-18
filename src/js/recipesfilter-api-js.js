@@ -13,20 +13,14 @@ export class TastyTreatsAPI {
 
   filterRecipes() {
     const params = new URLSearchParams({
-      title: this.title,
-      category: this.category,
-      page: this.page,
       limit: 9,
-      time: this.time,
-      area: this.area,
-      ingredient: this.ingredient,
     });
 
-    params.forEach((element, key) => {
-      if (element.trim() === '') {
-        params.delete(key);
+    for (const key of Object.keys(this)) {
+      if (this[key] !== '') {
+        params.set(key, this[key]);
       }
-    });
+    }
     return axios.get(`${TastyTreatsAPI.BASE_URL}?${params}`);
   }
 
@@ -39,4 +33,27 @@ export class TastyTreatsAPI {
       'https://tasty-treats-backend.p.goit.global/api/ingredients'
     );
   }
+
+  getAllCategories() {
+    return axios.get('https://tasty-treats-backend.p.goit.global/api/recipes?');
+  }
+
+  getGalleryItem() {
+    const BASE_URL =
+      'https://tasty-treats-backend.p.goit.global/api/categories';
+    return axios.get(`${BASE_URL}`);
+  }
+
+  // getAxios() {
+  //   // const BASE_URl = 'https://tasty-treats-backend.p.goit.global/api/recipes';
+  //   // const options = {
+  //   //   params: {
+  //   //     category: this.category,
+
+  //   //     page: this.page,
+  //   //     limit: 9,
+  //   //   },
+  //   // };
+  //   // return axios.get(`${BASE_URl}`, options);
+  // }
 }
