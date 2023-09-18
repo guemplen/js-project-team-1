@@ -1,11 +1,16 @@
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
+// //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
 const selectElCountry = document.querySelector('.select-country');
 const selectElIngridient = document.querySelector('.select-ingredient');
-const divSelectItems = document.querySelector('.select-items');
 const searchInput = document.querySelector('.search-input');
+const formEl = document.querySelector('.filter-form');
+
+const divSelectItems = document.querySelector('.select-items');
+const recipesListEl = document.querySelector('.recipes-list');
+const resetFilterBtn = document.querySelector('.reset-filter-container');
 // //---------------------------------------------------------  TIME
 function renderOptionsTime() {
   const data = [];
@@ -62,7 +67,7 @@ function renderOptionsIngridients(data) {
     .join('');
   selectElIngridient.insertAdjacentHTML('beforeend', markup);
 }
-
+//---------------------------------------------------------  EVENTS
 function onDivSelectItems(event) {
   const { name, value } = event.target;
   switch (name) {
@@ -83,18 +88,77 @@ function onDivSelectItems(event) {
     default:
       break;
   }
-
+  //---------------------------------------------------------  RENDER LI
   tastyTreatsAPI.filterRecipes().then(response => {
-    console.log(response.data.results);
+    if (response.data.results.length === 0) {
+      setTimeout(() => {
+        alert('Нет подходящего блюда');
+      }, 500);
+    }
+    renderListItem(response.data.results);
   });
 }
 
 const onInputChange = debounce(event => {
   tastyTreatsAPI.title = event.target.value.trim('');
   tastyTreatsAPI.filterRecipes().then(response => {
-    console.log(response.data.results);
+    if (response.data.results.length === 0) {
+      setTimeout(() => {
+        alert('Нет подходящего блюда');
+      }, 500);
+    }
+    renderListItem(response.data.results);
   });
 }, 300);
 
+function renderListItem(data) {
+  const markup = data
+    .map(recipe => {
+      const formattedRating = recipe.rating.toFixed(1);
+      return `
+              <li class="recipes-list-item" style="background-image: url(${recipe.preview});">
+                    <button type="button" class="recipes-list-item-like-btn">
+                        <svg class="recipes-list-item-like-btn-img" width="22" height="22">
+                            <use href="./images/icons.svg#heart"></use>
+                        </svg>
+                    </button>
+                    <h3 class="subtitle">${recipe.title}</h3>
+                    <p class="recipes-list-item-text">${recipe.description}</p>
+                      <div class="recipes-rating">
+                        <div class="recipes-rating-value">${formattedRating}</div>
+                        <div class="recipes-rating-body">
+                            <div class="recipes-rating-active"></div>
+                            <div class="recipes-rating-items">
+                            <input type="radio" class="recipes-rating-item" value="1" name="rating">
+                            <input type="radio" class="recipes-rating-item" value="2" name="rating">
+                            <input type="radio" class="recipes-rating-item" value="3" name="rating">
+                            <input type="radio" class="recipes-rating-item" value="4" name="rating">
+                            <input type="radio" class="recipes-rating-item" value="5" name="rating">
+                          </div>
+                        </div>
+                      </div>
+                        <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
+                    </div>
+              </li>
+    `;
+    })
+    .join('');
+
+  recipesListEl.innerHTML = markup;
+}
+
 divSelectItems.addEventListener('change', onDivSelectItems);
 searchInput.addEventListener('input', onInputChange);
+
+resetFilterBtn.addEventListener('click', event => {
+  if (event.target.nodeName === 'DIV') {
+    return;
+  } else {
+    formEl.reset();
+    recipesListEl.innerHTML = '';
+    tastyTreatsAPI.area = '';
+    tastyTreatsAPI.time = '';
+    tastyTreatsAPI.ingredient = '';
+    tastyTreatsAPI.title = '';
+  }
+});
