@@ -3,7 +3,7 @@ import './js/hero';
 import './js/filter';
 import './js/recipesfilter-api-js';
 import './js/top';
-import './js/favorites';
+// import './js/favorites';
 import './js/modal-video';
 import './js/mobile-menu';
 import './js/modal-rating';
