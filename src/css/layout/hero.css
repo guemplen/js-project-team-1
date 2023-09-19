@@ -47,6 +47,7 @@
     background-color: transparent;
     color: var(--black);
     border: 1px solid var(--green);
+    transition: var(--transition-dur-and-func);
   }
 
   .hero-main-txt-slide {
@@ -172,6 +173,15 @@
   .slick-prev {
     display: none !important;
   }
+  .hero-order-btn:hover {
+    color: var(--white);
+    background-color: var(--green);
+  }
+
+  .hero-order-btn:focus {
+    color: var(--white);
+    background-color: var(--green);
+  }
 }
 
 /*//////////////TABLET///////////////*/
@@ -221,6 +231,7 @@
     color: var(--black);
     border-radius: 15px;
     border: 1px solid var(--green);
+    transition: var(--transition-dur-and-func);
   }
 
   .hero-order-btn:hover {
@@ -375,6 +386,7 @@
     color: var(--black);
     border-radius: 15px;
     border: 1px solid var(--green);
+    transition: var(--transition-dur-and-func);
   }
 
   .hero-main-txt-slide {

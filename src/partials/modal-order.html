@@ -7,43 +7,35 @@
       </svg>
     </button>
     <h2 class="form-h2 text">order now</h2>
-    <form class="order-form">
-      <div class="form-div">
-        <label class="order-text text" for="name">Name:</label>
-        <input class="order-box" type="text" name="name" required /><br /><br />
-      </div>
-
-      <div class="form-div">
-        <label class="order-text text" for="phone">Phone number:</label>
-        <input class="order-box" type="tel" name="phone" required /><br /><br />
-      </div>
-
-      <div class="form-div">
-        <label class="order-text text" for="email">Email:</label>
-        <input
-          class="order-box"
-          type="email"
-          name="email"
-          required
-        /><br /><br />
-      </div>
-
-      <div class="form-div">
-        <label class="order-text text" for="comment">Comment:</label>
-        <textarea
-          class="textarea-box"
-          name="comment"
-          rows="8"
-          required
-        ></textarea
-        ><br /><br />
-      </div>
-
-      <div class="order-btn-div">
-        <button class="order-modal-btn js-submit-order" type="submit">
-          Send
-        </button>
-      </div>
-    </form>
+    <div class="form-first-div">
+      <form class="order-form">
+        <div class="form-div">
+          <label class="order-text text" for="name">Name:</label>
+          <input class="order-box" type="text" name="name" required />
+        </div>
+        <div class="form-div">
+          <label class="order-text text" for="phone">Phone number:</label>
+          <input class="order-box" type="tel" name="phone" required />
+        </div>
+        <div class="form-div">
+          <label class="order-text text" for="email">Email: </label>
+          <input class="order-box" type="email" name="email" required />
+        </div>
+        <div class="form-div">
+          <label class="order-text text" for="comment">Comment:</label>
+          <textarea
+            class="textarea-box"
+            name="comment"
+            rows="8"
+            required
+          ></textarea>
+        </div>
+        <div class="order-btn-div">
+          <button class="order-modal-btn js-submit-order" type="submit">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
