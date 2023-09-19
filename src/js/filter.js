@@ -1,6 +1,7 @@
 import axios from 'axios';
 import debounce from 'lodash.debounce';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
+import { ratingsMarkup } from './modal-rating';
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
 const selectElCountry = document.querySelector('.select-country');
@@ -127,33 +128,8 @@ function renderListItem(data) {
       <div class="recipes-rating">
         <div class="recipes-rating-value">${formattedRating}</div>
         <div class="recipes-rating-body">
-          <div class="recipes-rating-active"></div>
           <div class="recipes-rating-items">
-            <div class="recipes-rating-item" data-value="1">
-              <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                <use href="./images/sprite.svg#icon-star"></use>
-              </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="2">
-              <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                <use href="./images/sprite.svg#icon-star"></use>
-              </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="3">
-              <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                <use href="./images/sprite.svg#icon-star"></use>
-              </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="4">
-              <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                <use href="./images/sprite.svg#icon-star"></use>
-              </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="5">
-              <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                <use href="./images/sprite.svg#icon-star"></use>
-              </svg>
-            </div>
+          ${ratingsMarkup(+formattedRating)}
           </div>
         </div>
       </div>
