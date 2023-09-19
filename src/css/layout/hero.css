@@ -1,5 +1,283 @@
-.hero-section{
-max-width: 1280px;
+@media screen and (min-width: 370px) {
+
+    .container {
+        overflow: hidden;
+    }
+
+   
+    .hero-main-txt {
+        width: 344px;
+        padding-right: 20px;
+        padding-top: 92px;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 32px;
+        text-transform: uppercase;
+        color: var(--black);
+    }
+
+    .hero-txt-span-decoration {
+        font-style: italic;
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: 400;
+        color: var(--green);
+    }
+
+
+
+    .hero-big-ph-div {
+        margin-right: 0;
+        width: 182px;
+        overflow: visible;
+
+    }
+
+    .hero-additional-text {
+        width: 336px;
+        padding-top: 14px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        color: var(--black);
+    }
+
+    .hero-order-btn {
+        margin-top: 28px;
+        margin-bottom: 38px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500px;
+        border-radius: 12px;
+        background-color: transparent;
+        color: var(--black);
+        border: 1px solid var(--green);
+    }
+
+    .hero-main-txt-slide {
+      
+        position: absolute;
+        font-size: 9px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        bottom: 34px;
+        left: 0;
+        right: 0;
+        color: rgba(248, 248, 248, 0.60);
+    }
+
+    .hero-txt-slide {
+        position: absolute;
+        font-size: 8px;
+        font-weight: 400;
+        line-height: 12px;
+        bottom: 14px;
+        left: 0!important;
+        right: 0!important;
+        color: rgba(248, 248, 248, 0.20);;
+        
+    }
+    .slide-wrapper {
+        height: 280px;
+        display: flex !important;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .slick-slide:not(:last-child) {
+        overflow: hidden;
+        margin-right: 8px;
+    }
+
+    .slick-prev{
+        display: none!important;
+    }
+        
+
+    .hero-cook-ph-div {
+        width: 180px;
+        margin-left: 7px;
+        border-radius: 15px;
+        display: flex !important;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .hero-small-ph-div {
+        width: 400px;
+        border-radius: 15px;
+        display: flex !important;
+        text-align: center;
+        position: relative;
+        background: radial-gradient(circle, var(--green), 10%, var(--black));
+    }
+        
+    .hero-big-ph-div {
+        max-width: 250px;
+        display: flex !important;
+        justify-content: center;
+           
+    }
+        
+    .photo-cook {
+        border-radius: 15px;
+        width: 125px;
+        object-fit: cover;
+    }
+        
+    .photo-dish-small {
+        padding-bottom: 36px;
+        width: 100%;
+        object-fit: contain;
+    }
+        
+    .photo-dish-big {
+        border-radius: 15px;
+        width: 100%;
+        object-fit: cover;
+        background-color: black;
+    }
+    
+    .hero-container {
+        /* max-width: 375px;
+        overflow: hidden; */
+    }
+
+
+           
+
+
+    /*//////////////////////DOTS//////////////*/
+
+        .slick-dots {
+            scale: 0.5;
+        }
+    
+        .slick-dots button {
+            border-radius: 50%;
+            background-color: var(--black) !important;
+    
+        }
+    
+        .slick-dots li {
+            margin: 0 !important;
+    
+        }
+    
+        .slick-dots li button {
+            width: 2px !important;
+            height: 2px !important;
+        }
+    
+        .slick-active button {
+            background-color: var(--green) !important;
+        }
+    
+        .slick-dots li button:before {
+            display: none;
+        }
+
+    
+}
+
+
+
+/*//////////////TABLET///////////////*/
+
+ @media screen and (min-width: 768px) {
+
+    .hero-container{
+        overflow: hidden!important;
+        max-width: 768px;
+        padding-right: 32px;
+    }
+
+    /* .hero-wrapper {
+        padding-left: 32px;
+    } */
+
+    .slide-wrapper {
+        height: 442px;
+        display: flex !important;
+    }
+
+    .hero-main-txt {
+        padding-right: 0px;
+        width: 448px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 120%;
+    }
+
+    .hero-txt-span-decoration {
+        font-size: 36px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 120%;
+        color: var(--green);
+    }
+
+    .hero-additional-text {
+        padding-top: 16px;
+    }
+
+    .hero-order-btn {
+        margin-top: 32px;
+        margin-bottom: 64px;
+        padding: 14px 28px;
+        font-size: 14px;
+        font-weight: 500px;
+        color: var(--black);
+        border-radius: 15px;
+        border: 1px solid var(--green);
+    }
+    
+    .hero-order-btn:hover {
+        color: var(--white);
+        background-color: var(--green);
+    }
+    
+    .hero-order-btn:focus {
+        color: var(--white);
+        background-color: var(--green);
+    }
+
+
+    .hero-cook-ph-div {
+        width: 130px;
+        margin-left: 4px;
+        overflow: hidden;
+    }
+
+    .hero-small-ph-div{
+        width: 351px;
+        overflow: hidden;
+    }
+
+    .photo-dish-big {
+        border-radius: 15px;
+    }
+
+    .slick-dots{
+        width: 598px!important;
+    }
+
+}
+
+
+/*///////////PC//////////*/
+
+
+
+ @media screen and (min-width: 1280px) {
+
+.hero-container {
+    max-width: 1280px;
+}
+
+ .hero-section{
+    max-width: 1280px;
 }
 
 .hero-wrapper {
@@ -8,19 +286,18 @@ max-width: 1280px;
 }
 
 .slide-wrapper {
+    height: 442px;
     padding-top: 94px;
     display: flex !important;
 }
 
 .hero-div{
-margin-top: 166px;
-margin-right: 32px;
-padding-left: 100px;
-
+    margin-right: 21px;
+    margin-top: 166px;
 }
 
 .slick-slider{
-    width: 895px;
+    width: 636px;
 }
 
 .slick-slide{
@@ -32,20 +309,28 @@ padding-left: 100px;
 }
 
 .hero-cook-ph-div{
-    width: 182px;
     display: flex !important;
     justify-content: center;
     overflow: hidden;
 }
 
+.hero-big-ph-div{
+    width: 182px;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .photo-cook{
+    border-radius: 15px;
     object-fit: cover;
 }
 
 .photo-dish-small{
-    padding-right: 20px;
+    padding-bottom: 52px;
+    padding-right: 45px;
+    padding-left: 45px;
     border-radius: 15px;
-    object-fit:contain;
+    object-fit: contain;
 }
 
 .hero-small-ph-div{
@@ -60,8 +345,8 @@ padding-left: 100px;
 }
 
 .hero-main-txt{
-
-    width: 446px;
+    padding-top: 0;
+    width: 448px;
     font-size: 36px;
     font-weight: 600;
     line-height: 43.2px;
@@ -70,6 +355,7 @@ padding-left: 100px;
 }
 
 .hero-txt-span-decoration{
+    font-size: 36px;
     font-style: italic;
     font-weight: 400;
     color: var(--green);
@@ -87,6 +373,7 @@ padding-left: 100px;
 }
 
 .hero-order-btn{
+    margin-top: 0px;
     padding: 14px 28px;
     font-size: 14px;
     font-weight: 500px;
@@ -94,17 +381,6 @@ padding-left: 100px;
     border-radius: 15px;
     border: 1px solid var(--green);
 }
-
-.hero-order-btn:hover{
-    color: var(--white);
-    background-color: var(--green);
-}
-
-.hero-order-btn:focus {
-    color: var(--white);
-    background-color: var(--green);
-}
-
 
 .hero-main-txt-slide{
     position: absolute;
@@ -129,25 +405,11 @@ padding-left: 100px;
     color: rgba(248, 248, 248, 0.20);
 }
 
-.slick-dots button {
-border-radius: 50%;
-background-color: var(--black)!important;
 
-}
-.slick-dots li{
-margin: 0!important;
+/*/////нижній марджин для крапочок під слайдером//////*/
 
-}
-.slick-dots li button {
-width: 2px!important;
-height: 2px!important;
+.slick-dots {
+    margin-bottom: 20px!important;
 }
 
-.slick-active button {
-background-color: var(--green)!important;
 }
-
-.slick-dots li button:before {
-display: none;
-}
-
