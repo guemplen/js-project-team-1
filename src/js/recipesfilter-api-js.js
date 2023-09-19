@@ -36,7 +36,10 @@ export class TastyTreatsAPI {
   }
 
   getAllCategories() {
-    return axios.get('https://tasty-treats-backend.p.goit.global/api/recipes?');
+    const params = new URLSearchParams({
+      limit: this.limit,
+    });
+    return axios.get(`${TastyTreatsAPI.BASE_URL}?${params}`);
   }
 
   getGalleryItem() {

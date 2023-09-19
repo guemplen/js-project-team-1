@@ -2,7 +2,7 @@
   width: 176px;
   height: 50px;
   border-radius: 15px;
-  border: var(--black-rgba-2);
+  border: 1px solid var(--grey-inputs);
   background-color: transparent;
   color: var(--black-rgba);
   font-family: Inter;
