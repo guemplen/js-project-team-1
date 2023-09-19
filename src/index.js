@@ -8,3 +8,4 @@ import './js/modal-video';
 import './js/mobile-menu';
 import './js/modal-rating';
 import './js/modal-order';
+import './js/categories';
