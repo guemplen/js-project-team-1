@@ -6,26 +6,35 @@
       </button>
       <ul class="recipes-sidebar-search-list list"></ul>
     </div>
-    <div class="andruha"></div>
+
+    <div>
+      <include src="./partials/top.html"></include>
+    </div>
   </div>
   <div class="render">
     <div class="recipes-search">
       <form class="filter-form">
         <div class="wrapper-input">
-          <label class="recipes-search-dir-search" for="search-text"
+          <label class="recipes-search-dir-search label" for="search-text"
             >Search</label
           >
-          <input
-            type="text"
-            class="search-input"
-            name="Search"
-            placeholder="Enter Text"
-          />
+          <div class="input-wraper-for-icon">
+            <input
+              type="text"
+              class="search-input"
+              name="Search"
+              placeholder="Enter Text"
+            />
+            <span class="icon-input"
+              ><svg class="icon-search-filter" width="16" height="16">
+                <use href="./images/sprite.svg#icon-search"></use></svg
+            ></span>
+          </div>
         </div>
 
         <div class="select-items">
           <div class="wrapper-input">
-            <label class="recipes-search-dir-list" for="search-options"
+            <label class="recipes-search-dir-list label" for="search-options"
               >Time</label
             >
             <select class="select-time" name="time" data-title="time">
@@ -34,7 +43,7 @@
           </div>
 
           <div class="wrapper-input">
-            <label class="recipes-search-dir-list" for="search-options"
+            <label class="recipes-search-dir-list label" for="search-options"
               >Area</label
             >
             <select class="select-country" name="country" data-title="area">
@@ -43,7 +52,7 @@
           </div>
 
           <div class="wrapper-input">
-            <label class="recipes-search-dir-list" for="search-options"
+            <label class="recipes-search-dir-list label" for="search-options"
               >Ingredients</label
             >
             <select
@@ -84,14 +93,6 @@
         <span class="reset-label">Reset the filter</span>
       </div>
     </div>
-    <ul class="recipes-list"></ul>
+    <ul class="recipes-list list"></ul>
   </div>
 </section>
-
-<!-- <body>
-        <section class="container" id="recipes">
-            
-        </section>
-    
-        <script type="module" src="./js/filter.js"></script>
-    </body> -->

@@ -2,19 +2,19 @@ const switchElement = document.querySelector('.switch input');
 
 const enableDark = () => {
   document.body.classList.add('darkmode');
-  localStorage.setItem('darkMode', 'enabled'); // Correct the case here
+  localStorage.setItem('darkMode', 'enabled'); 
 };
 
 const disableDark = () => {
   document.body.classList.remove('darkmode');
-  localStorage.setItem('darkMode', 'disabled'); // Correct the case here
+  localStorage.setItem('darkMode', 'disabled'); 
 };
 
-// Check the initial state from localStorage
+
 const darkMode = localStorage.getItem('darkMode');
 if (darkMode === 'enabled') {
   enableDark();
-  switchElement.checked = true; // Make sure the switch is checked
+  switchElement.checked = true; 
 }
 const border = document.querySelector('.hero-small-ph-div');
 switchElement.addEventListener('click', () => {
