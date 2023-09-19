@@ -1,4 +1,5 @@
 import './js/header';
+import './js/switcher';
 import './js/hero';
 import './js/filter';
 import './js/recipesfilter-api-js';
