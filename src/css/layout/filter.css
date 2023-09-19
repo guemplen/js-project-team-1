@@ -1,8 +1,3 @@
-.filter-wrapper {
-  display: flex;
-  gap: 64px;
-}
-
 .btn-all-categories {
   width: 176px;
   height: 50px;
@@ -15,7 +10,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-top: 17px;
+  margin-top: 50px;
+  transition: color 250ms, background 250ms;
+}
+.btn-all-categories:hover,
+.btn-all-categories:focus {
+  color: rgba(248, 248, 248, 1);
+  background: #9bb537;
 }
 .recipes-sidebar-search-list {
   height: 198px;
@@ -23,8 +24,18 @@
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 19px;
   padding: 0;
+  margin-top: 24px;
+}
+.recipes-sidebar-search-list::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+.recipes-sidebar-search-list::-webkit-scrollbar-thumb {
+  background-color: #9bb537;
+  border-radius: 12px;
+  width: 10px;
 }
 .btn-for-filter {
   background-color: transparent;
@@ -36,15 +47,196 @@
   font-weight: 500;
   line-height: 18px;
 }
-.btn-for-filter:hover {
+.btn-for-filter:hover,
+.btn-for-filter:focus {
   color: #9bb537;
 }
 .btn-active {
   color: #9bb537;
 }
+/* ==============================================FORM FILTER */
+.filter-form {
+  margin-top: 40px;
+}
+.wrapper-input {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.wrapper-for-time-and-area {
+  display: flex;
+  gap: 14px;
+}
+.select-time {
+  width: 161px;
+  height: 46px;
+  border-radius: 15px;
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid var(--grey-inputs);
+  padding: 14px 18px;
+}
+.select-country {
+  width: 161px;
+  height: 46px;
+  border-radius: 15px;
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid var(--grey-inputs);
+  padding: 13px 18px;
+}
+.search-input {
+  width: 335px;
+  height: 46px;
+  padding: 14px 48px;
+  border-radius: 15px;
+  border: 1px solid var(--grey-inputs);
+}
+.search-input::placeholder {
+  color: rgba(5, 5, 5, 0.5);
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+.input-wraper-for-icon {
+  position: relative;
+}
+.icon-input {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+}
 
+.select-ingredient {
+  width: 188px;
+  height: 46px;
+  border: 1px solid var(--grey-inputs);
+  border-radius: 15px;
 
+  padding: 12px 18px;
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+.reset-filter-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.reset-button {
+  background-color: transparent;
+  border: none;
+  line-height: 0;
+  padding-right: 0;
+}
+.reset-label {
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.label {
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+}
+select {
+  appearance: none;
+  background-image: none;
+  background-color: transparent;
+}
+/*=====================================================CARDS DYNAMIC */
+.recipes-list-item-like-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+.recipes-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 55px;
+}
+.recipes-list-item {
+  position: relative;
+  padding: 16px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 335px;
+  height: 335px;
+  border-radius: 8px;
+}
+.subtitle {
+  margin-top: 198px;
+  margin-bottom: 8px;
+  color: var(--white);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+  width: 303px; /* Ширина контейнера */
+  white-space: nowrap; /* Заборона переносу тексту на новий рядок */
+  overflow: hidden; /* Приховання великого тексту, що виходить за межі контейнера */
+  text-overflow: ellipsis;
+}
+.recipes-list-item-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--white);
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+}
+.recipes-rating-value {
+  color: var(--white);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+.recipes-rating {
+  margin-top: 16px;
+  display: flex;
+}
+
+/*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {
+  .btn-all-categories {
+    margin-top: 65px;
+  }
   .recipes-list {
     flex-direction: row;
     gap: 16px;
@@ -58,135 +250,64 @@
   .subtitle {
     margin-top: 143px;
   }
-}
-@media screen and (min-width: 767px) and (max-width: 1279px) {
+  .wrapper-for-time-and-area {
+    display: block;
+  }
+  .select-ingredient {
+    width: 188px;
+    height: 50px;
+  }
+  .select-items {
+    display: inline;
+  }
+  .search-input {
+    width: 278px;
+    height: 50px;
+  }
+  .select-time {
+    width: 125px;
+    height: 50px;
+  }
+  .select-country {
+    width: 141px;
+    height: 50px;
+  }
   .recipes-sidebar-search-list {
     width: 176px;
     height: 416px;
   }
+  .filter-wrapper {
+    display: flex;
+    gap: 32px;
+  }
 }
+
 @media screen and (min-width: 1280px) {
   .recipes-sidebar-search-list {
     width: 235px;
     height: 416px;
     margin-top: 42px;
   }
+  .recipes-list-item {
+    width: 250px;
+    height: 287px;
+    margin: 0;
+  }
+  .filter-wrapper {
+    gap: 64px;
+  }
+  .filter-form {
+    display: flex;
+    gap: 16px;
+  }
+  .recipes-list {
+    gap: 23px;
+  }
+  .filter-form {
+    margin-right: 16px;
+  }
+  .select-items {
+    display: flex;
+    gap: 16px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-.filter-form {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  column-gap: 16px;
-}
-
-.search-input {
-  width: 278px;
-  padding: 14px 122px 14px 18px;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.select-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 16px;
-}
-
-.select-time {
-  width: 125px;
-  height: 48px;
-  padding: 14px 18px;
-  text-align: center;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.select-country {
-  width: 141px;
-  height: 48px;
-  padding: 14px 18px;
-  text-align: center;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.select-ingredient {
-  width: 188px;
-  height: 48px;
-  padding: 14px 18px;
-  text-align: center;
-  border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-.reset-filter-container {
-  display: flex;
-  align-items: center; 
-  justify-content: flex-end;
-  column-gap: 4px;
-  margin-top: 14px;
-  text-align: center;
-}
-
-.reset-button {
-  width: 16px;
-  height: 16px;
-  border: none;
-}
-
-.reset-label {
-  color: rgba(5, 5, 5, 0.5);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 16px; /* 133.333% */
-  cursor: pointer;
-}
-
-.reset-button {
-  background-color: inherit;
-}
-
-/* .recipes-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 32px 16px;
-  margin-top: 14px;
-  list-style: none;
-} */

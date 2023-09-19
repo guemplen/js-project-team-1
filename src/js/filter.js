@@ -8,6 +8,8 @@ const selectElCountry = document.querySelector('.select-country');
 const selectElIngridient = document.querySelector('.select-ingredient');
 const searchInput = document.querySelector('.search-input');
 const formEl = document.querySelector('.filter-form');
+const selectEl = document.querySelectorAll('select');
+const iconSearchEl = document.querySelector('.icon-search-filter ');
 
 const divSelectItems = document.querySelector('.select-items');
 const recipesListEl = document.querySelector('.recipes-list');
@@ -71,6 +73,9 @@ function renderOptionsIngridients(data) {
 
 //---------------------------------------------------------  EVENTS
 function onDivSelectItems(event) {
+  //МІНЯЄ КОЛІР НА СЕЛЕКТОРІ ПРИ ВИБОРІ ПЕРШОЇ І НАСТУПНИХ ОПЦІЙ
+  event.target.style.color = 'var(--black)';
+  //
   const { name, value } = event.target;
   switch (name) {
     case 'time':
@@ -104,7 +109,16 @@ function onDivSelectItems(event) {
 }
 
 const onInputChange = debounce(event => {
+  const inputValue = event.target.value.trim();
+
+  if (inputValue === '') {
+    iconSearchEl.style.fill = 'rgba(5, 5, 5, 0.5)';
+  } else {
+    iconSearchEl.style.fill = '#9bb537';
+  }
+
   tastyTreatsAPI.title = event.target.value.trim('');
+
   tastyTreatsAPI.filterRecipes().then(response => {
     if (response.data.results.length === 0) {
       setTimeout(() => {
@@ -140,7 +154,12 @@ export function renderListItem(data) {
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
       return `
-              <li class="recipes-list-item" style="background-image: url(${recipe.preview});">
+              <li class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${recipe.preview});
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+;
+              ;">
                     <button type="button" class="recipes-list-item-like-btn">
                         <svg class="recipes-list-item-like-btn-img" width="22" height="22">
                             <use href="./images/sprite.svg#icon-heart"></use>
@@ -200,8 +219,13 @@ resetFilterBtn.addEventListener('click', event => {
   if (event.target.nodeName === 'DIV') {
     return;
   } else {
+    //ПОВЕРТАЄ КОЛІР  СЕЛЕКТОРУ ДО ДЕФОЛТУ//
     formEl.reset();
-    recipesListEl.innerHTML = '';
+    iconSearchEl.style.fill = 'rgba(5, 5, 5, 0.5)';
+    selectEl.forEach(el => {
+      el.style.color = 'rgba(5, 5, 5, 0.50)';
+    });
+    //===================================//
     tastyTreatsAPI.area = '';
     tastyTreatsAPI.time = '';
     tastyTreatsAPI.ingredient = '';
