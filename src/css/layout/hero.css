@@ -129,13 +129,9 @@
     border-radius: 15px;
     width: 100%;
     object-fit: cover;
-    background-color: black;
+    background-color: var(--black-05);
   }
 
-  .hero-container {
-    /* max-width: 375px;
-        overflow: hidden; */
-  }
 
   /*//////////////////////DOTS//////////////*/
 
@@ -192,10 +188,6 @@
     max-width: 768px;
     padding-right: 32px;
   }
-
-  /* .hero-wrapper {
-        padding-left: 32px;
-    } */
 
   .slide-wrapper {
     height: 442px;

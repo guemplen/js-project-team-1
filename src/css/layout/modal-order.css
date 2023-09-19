@@ -89,10 +89,10 @@
   justify-content: center;
   width: 295px;
   padding: 15px 0;
-  color: #f8f8f8;
+  color: var(--white);
   border: none;
   border-radius: 15px;
-  background: #9bb537;
+  background: var(--green);
 }
 @media screen and (min-width: 768px) {
   .order-now-modal {

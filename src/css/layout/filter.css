@@ -7,9 +7,9 @@
   width: 176px;
   height: 50px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: var(--black-rgba-2);
   background-color: transparent;
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -29,7 +29,7 @@
 .btn-for-filter {
   background-color: transparent;
   border: none;
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--black-rgba-2);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -37,10 +37,10 @@
   line-height: 18px;
 }
 .btn-for-filter:hover {
-  color: #9bb537;
+  color: var(--green);
 }
 .btn-active {
-  color: #9bb537;
+  color: var(--green);
 }
 
 
@@ -94,8 +94,8 @@
   width: 278px;
   padding: 14px 122px 14px 18px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -116,8 +116,8 @@
   padding: 14px 18px;
   text-align: center;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
@@ -130,8 +130,8 @@
   padding: 14px 18px;
   text-align: center;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -145,8 +145,8 @@
   padding: 14px 18px;
   text-align: center;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
@@ -170,7 +170,7 @@
 }
 
 .reset-label {
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--black-rgba);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -190,3 +190,5 @@
   margin-top: 14px;
   list-style: none;
 } */
+
+
