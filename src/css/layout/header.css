@@ -50,10 +50,10 @@
 .burger {
   display: flex;
   justify-content: center;
-  stroke: #000;
+  stroke: var(--black);
 }
 .cart {
-  stroke: #000;
+  stroke: var(--black);
   fill: none;
 }
 /** MODAL **/
@@ -76,7 +76,7 @@
   gap: 16px;
 }
 .modal-home {
-  color: #fff;
+  color: var(--white);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -84,12 +84,12 @@
   line-height: normal;
 }
 .modal-home {
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   font-weight: 500;
 }
 .modal-fav {
-  color: #fff;
+  color: var(--white);
   font-size: 12px;
   font-weight: 500;
 }
@@ -120,11 +120,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--switch-btn-grey);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;
-  box-shadow: 7px 5px 15px 0px rgba(160, 158, 160, 0.4);
 }
 
 .slider:before {
@@ -195,7 +194,7 @@ input:checked + .slider:before {
     letter-spacing: -0.72px;
   }
   .site-nav-home {
-    color: #9bb537;
+    color: var(--green);
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
@@ -203,7 +202,7 @@ input:checked + .slider:before {
     line-height: normal;
   }
   .site-nav-fav {
-    color: #050505;
+    color: var(--black);
     font-family: Inter;
     font-size: 12px;
     font-style: normal;

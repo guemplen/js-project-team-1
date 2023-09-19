@@ -2,9 +2,24 @@
   --white: #f8f8f8;
   --yellow: #eea10c;
   --green: #9bb537;
-  --black: #050505;
+  --black: #161616;
   --grey: #ffffff; /*для випадаючого списку інпута*/
   --grey-inputs: #05050533; /*чорний напівпрозорий*/
   --switch-btn-grey: #cecdcd; /* сірий для перемикача теми*/
   --green-gradient: #9bb537, #9bb537b0; /*для перемикача теми */
+  --img-grad: radial-gradient(circle, var(--green), 10%, #050505);
+  --border: none;
+}
+
+.darkmode {
+  --border: 1px solid var(--green);
+  --white: #161616;
+  --yellow: #eea10c;
+  --green: #9bb537;
+  --black: #f8f8f8;
+  --grey: #ffffff; /*для випадаючого списку інпута*/
+  --grey-inputs: #05050533; /*чорний напівпрозорий*/
+  --switch-btn-grey: #cecdcd; /* сірий для перемикача теми*/
+  --green-gradient: #9bb537, #9bb537b0; /*для перемикача теми */
+  --img-grad: radial-gradient(circle, var(--green), 10%, #050505);
 }
