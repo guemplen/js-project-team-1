@@ -1,0 +1,73 @@
+.recipes-rating {
+    display: flex;
+    align-items: flex-end;
+}
+
+.recipes-rating-body {
+    position: relative;
+}
+
+.recipes-rating-value {
+    color: var(--white);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.29;
+    padding-right: 12px;
+}
+
+.recipes-rating-active {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.recipes-rating-item {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    fill: none;
+    /* stroke: var(--yellow);
+    stroke-width: 1.5; */
+  }
+
+  .recipes-rating-item.active:hover {
+    fill: var(--yellow);
+    stroke: none;
+  }
+  .recipes-rating-item:hover {
+    fill: var(--yellow);
+    stroke: none;
+  }
+  .recipes-rating-item.active {
+    fill: var(--yellow);
+    stroke: none;
+  }
+  .recipes-rating-item.active:hover ~ .recipes-rating-item {
+    fill: var(--yellow);
+    stroke: none;
+  }
+
+/* --------------- Лайк ----------------- */
+
+.recipes-list-item-like-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .recipes-list-item-like-btn-img {
+    stroke: var(--white);
+    stroke-width: 1.5;
+    fill: none; /* Колір за замовчуванням для не-подобається */
+    transition: fill 0.3s ease; /* Плавна анімація зміни кольору */
+  }
+  
+
+  .recipes-list-item-like-btn.liked .liked {
+    fill: var(--white); /* Колір для подобається */
+  }
