@@ -28,7 +28,7 @@ export class TastyTreatsAPI {
   async getAllPopularRecipes() {
     try {
       const response = await this.customAxios.get('/recipes/popular');
-      console.log('AllPopularRecipes', response.data);
+      // console.log('AllPopularRecipes', response.data);
       return response.data;
     } catch (error) {
       throw error;
@@ -98,15 +98,15 @@ export class TastyTreatsAPI {
   //     }
   //   }
 
-  async addOrder(orderData) {
-    try {
-      const response = await this.customAxios.post('', objectOrder);
-      console.log('addOrder', response.data);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  }
+  // async addOrder(orderData) {
+  //   try {
+  //     const response = await this.customAxios.post('', objectOrder);
+  //     console.log('addOrder', response.data);
+  //     return response.data;
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
 }
 
 // import { TastyTreatsAPI } from './api';

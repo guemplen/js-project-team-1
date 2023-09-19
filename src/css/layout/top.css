@@ -1,18 +1,142 @@
 .recipes-sidebar-popular-list {
   padding-inline-start: 0px;
+  margin-top: 20px;
 }
 
-@media screen and (min-width: 375px) {
+.container {
+  max-width: 375px;
+}
+
+.recipes-sidebar-popular-title {
+  max-width: 255px;
+  margin-top: 40px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+
+.recipes-sidebar-popular-item {
+  display: flex;
+  margin-bottom: 24px;
+  max-width: 335px;
+  max-height: 67px;
+}
+
+.recipes-sidebar-popular-item-img {
+  margin-right: 16px;
+  margin-bottom: 3px;
+  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+}
+
+.subtitle {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.28;
+  text-transform: uppercase;
+  color: --black;
+}
+
+.recipes-sidebar-popular-item-descr-text {
+  margin-top: 8px;
+  max-width: 255px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: normal; */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* количество строк */
+  -webkit-box-orient: vertical;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.33;
+  color: --black;
+}
+
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 375px;
+    max-width: 768px;
   }
 
   .recipes-sidebar-popular-list {
-    margin-top: 20px;
+    /* padding-inline-start: 0px; */
+    margin-top: 32px;
   }
 
   .recipes-sidebar-popular-title {
-    margin-top: 40px;
+    max-width: 176px;
+    margin-top: 24px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.33;
+    text-transform: uppercase;
+  }
+
+  .recipes-sidebar-popular-item {
+    display: flex;
+    margin-bottom: 16px;
+    max-width: 176px;
+    max-height: 67px;
+  }
+
+  .recipes-sidebar-popular-item-img {
+    margin-right: 8px;
+    margin-bottom: 19px;
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.28;
+    text-transform: uppercase;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* количество строк */
+    -webkit-box-orient: vertical;
+    /* white-space: nowrap; */
+    color: --black;
+  }
+
+  .recipes-sidebar-popular-item-descr-text {
+    margin-top: 8px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: normal; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* количество строк */
+    -webkit-box-orient: vertical;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    color: --black;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .recipes-sidebar-popular-list {
+    /* padding-inline-start: 0px; */
+    margin-top: 32px;
+  }
+
+  .recipes-sidebar-popular-title {
+    max-width: 235px;
+    margin-top: 64px;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
@@ -22,46 +146,47 @@
 
   .recipes-sidebar-popular-item {
     display: flex;
-    margin-bottom: 24px;
-    max-width: 332px;
+    margin-bottom: 32px;
+    max-width: 235px;
     max-height: 67px;
   }
 
   .recipes-sidebar-popular-item-img {
     margin-right: 16px;
+    margin-bottom: 3px;
     border-radius: 8px;
+    width: 64px;
+    height: 64px;
   }
 
   .subtitle {
-    color: --black;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: 1.28;
     text-transform: uppercase;
-    margin: 0;
-    margin-right: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* количество строк */
+    -webkit-box-orient: vertical;
+    /* white-space: nowrap; */
+    color: --black;
   }
 
   .recipes-sidebar-popular-item-descr-text {
     margin-top: 8px;
-    max-width: 252px;
+    max-width: 155px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal;
-    font-size: 12px;
+    /* white-space: normal; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* количество строк */
+    -webkit-box-orient: vertical;
+    font-size: 10px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.33;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
+    line-height: 1.4;
+    color: --black;
   }
 }

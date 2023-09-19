@@ -1,0 +1,97 @@
+<section class="container filter-wrapper" id="filter">
+  <div class="aside">
+    <div class="btn-section">
+      <button class="btn-all-categories btn-active" type="button">
+        All categories
+      </button>
+      <ul class="recipes-sidebar-search-list list"></ul>
+    </div>
+    <include src="./partials/top.html"></include>
+  </div>
+  <div class="render">
+    <div class="recipes-search">
+      <form class="filter-form">
+        <div class="wrapper-input">
+          <label class="recipes-search-dir-search" for="search-text"
+            >Search</label
+          >
+          <input
+            type="text"
+            class="search-input"
+            name="Search"
+            placeholder="Enter Text"
+          />
+        </div>
+
+        <div class="select-items">
+          <div class="wrapper-input">
+            <label class="recipes-search-dir-list" for="search-options"
+              >Time</label
+            >
+            <select class="select-time" name="time" data-title="time">
+              <option class="options" value="">No Time</option>
+            </select>
+          </div>
+
+          <div class="wrapper-input">
+            <label class="recipes-search-dir-list" for="search-options"
+              >Area</label
+            >
+            <select class="select-country" name="country" data-title="area">
+              <option class="options" value="">Empty</option>
+            </select>
+          </div>
+
+          <div class="wrapper-input">
+            <label class="recipes-search-dir-list" for="search-options"
+              >Ingredients</label
+            >
+            <select
+              class="select-ingredient"
+              name="ingredient"
+              data-title="ingredient"
+            >
+              <option class="options" value="">No Ingredient</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      <div class="reset-filter-container">
+        <button class="reset-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              d="M12 4L4 12"
+              stroke="#9BB537"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M4 4L12 12"
+              stroke="#9BB537"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <span class="reset-label">Reset the filter</span>
+      </div>
+    </div>
+    <ul class="recipes-list"></ul>
+  </div>
+</section>
+
+<!-- <body>
+        <section class="container" id="recipes">
+            
+        </section>
+    
+        <script type="module" src="./js/filter.js"></script>
+    </body> -->
