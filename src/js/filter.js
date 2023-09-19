@@ -12,6 +12,7 @@ const formEl = document.querySelector('.filter-form');
 const divSelectItems = document.querySelector('.select-items');
 const recipesListEl = document.querySelector('.recipes-list');
 const resetFilterBtn = document.querySelector('.reset-filter-container');
+const sidebarList = document.querySelector('.recipes-sidebar-search-list');
 // //---------------------------------------------------------  TIME
 function renderOptionsTime() {
   const data = [];
@@ -99,7 +100,6 @@ function onDivSelectItems(event) {
       }, 500);
     }
     renderListItem(response.data.results);
-    console.log(tastyTreatsAPI);
   });
 }
 
@@ -117,7 +117,25 @@ const onInputChange = debounce(event => {
   });
 }, 300);
 
-function renderListItem(data) {
+function onSideBarClick(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  tastyTreatsAPI.category = event.target.value;
+
+  tastyTreatsAPI.filterRecipes().then(response => {
+    if (response.data.results.length === 0) {
+      setTimeout(() => {
+        Notiflix.Notify.failure(
+          'Sorry, no such recipe found. Please try again.'
+        );
+      }, 500);
+    }
+    renderListItem(response.data.results);
+  });
+}
+
+export function renderListItem(data) {
   const markup = data
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
@@ -125,7 +143,7 @@ function renderListItem(data) {
               <li class="recipes-list-item" style="background-image: url(${recipe.preview});">
                     <button type="button" class="recipes-list-item-like-btn">
                         <svg class="recipes-list-item-like-btn-img" width="22" height="22">
-                            <use href="./images/icons.svg#heart"></use>
+                            <use href="./images/sprite.svg#icon-heart"></use>
                         </svg>
                     </button>
                     <h3 class="subtitle">${recipe.title}</h3>
@@ -133,35 +151,35 @@ function renderListItem(data) {
                       <div class="recipes-rating">
                         <div class="recipes-rating-value">${formattedRating}</div>
                             <div class="recipes-rating-body">
-        <div class="recipes-rating-active"></div>
-        <div class="recipes-rating-items">
-            <div class="recipes-rating-item" data-value="1">
-                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                    <use href="./images/sprite.svg#icon-star"></use>
-                </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="2">
-                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                    <use href="./images/sprite.svg#icon-star"></use>
-                </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="3">
-                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                    <use href="./images/sprite.svg#icon-star"></use>
-                </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="4">
-                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                    <use href="./images/sprite.svg#icon-star"></use>
-                </svg>
-            </div>
-            <div class="recipes-rating-item" data-value="5">
-                <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                    <use href="./images/sprite.svg#icon-star"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
+                              <div class="recipes-rating-active"></div>
+                              <div class="recipes-rating-items">
+                                  <div class="recipes-rating-item" data-value="1">
+                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                                          <use href="./images/sprite.svg#icon-star"></use>
+                                      </svg>
+                                  </div>
+                                  <div class="recipes-rating-item" data-value="2">
+                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                                          <use href="./images/sprite.svg#icon-star"></use>
+                                      </svg>
+                                  </div>
+                                  <div class="recipes-rating-item" data-value="3">
+                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                                          <use href="./images/sprite.svg#icon-star"></use>
+                                      </svg>
+                                  </div>
+                                  <div class="recipes-rating-item" data-value="4">
+                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                                          <use href="./images/sprite.svg#icon-star"></use>
+                                      </svg>
+                                  </div>
+                                  <div class="recipes-rating-item" data-value="5">
+                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                                          <use href="./images/sprite.svg#icon-star"></use>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
                         <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
                     </div>
@@ -175,7 +193,9 @@ function renderListItem(data) {
 
 divSelectItems.addEventListener('change', onDivSelectItems);
 searchInput.addEventListener('input', onInputChange);
+sidebarList.addEventListener('click', onSideBarClick);
 
+//---------------------------------------------------------- RESET
 resetFilterBtn.addEventListener('click', event => {
   if (event.target.nodeName === 'DIV') {
     return;
@@ -186,5 +206,6 @@ resetFilterBtn.addEventListener('click', event => {
     tastyTreatsAPI.time = '';
     tastyTreatsAPI.ingredient = '';
     tastyTreatsAPI.title = '';
+    tastyTreatsAPI.category = '';
   }
 });

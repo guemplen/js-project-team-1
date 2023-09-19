@@ -43,17 +43,4 @@ export class TastyTreatsAPI {
       'https://tasty-treats-backend.p.goit.global/api/categories';
     return axios.get(`${BASE_URL}`);
   }
-
-  // getAxios() {
-  //   // const BASE_URl = 'https://tasty-treats-backend.p.goit.global/api/recipes';
-  //   // const options = {
-  //   //   params: {
-  //   //     category: this.category,
-
-  //   //     page: this.page,
-  //   //     limit: 9,
-  //   //   },
-  //   // };
-  //   // return axios.get(`${BASE_URl}`, options);
-  // }
 }
