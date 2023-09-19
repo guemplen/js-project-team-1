@@ -94,31 +94,50 @@ function createGalleryCards (arr) {
      let roundedNumber = parseFloat(productinfo.rating.toFixed(1));
 
          return  `
-          <li class="recipes-list-item" style="background-image: url(${productinfo.thumb}); background-repeat: no-repeat">
-  <button type="button" class="recipes-list-item-like-btn">
-      <svg class="recipes-list-item-like-btn-img" width="22" height="22">
-          <use href="./images/icons.svg#heart"></use>
-      </svg>
-  </button>
-  <h3 class="subtitle">${productinfo.title}</h3>
-  <p class="recipes-list-item-text">${productinfo.description}</p>
-  <div class="recipes-rating">
-    <div class="recipes-rating-body">
-        <div class="recipes-rating-value">${roundedNumber}</div>
-        <div class="recipes-rating-active"></div>
-        <div class="recipes-rating-items">
-            <input type="radio" class="recipes-rating-item" value="1" name="rating">
-            <input type="radio" class="recipes-rating-item" value="2" name="rating">
-            <input type="radio" class="recipes-rating-item" value="3" name="rating">
-            <input type="radio" class="recipes-rating-item" value="4" name="rating">
-            <input type="radio" class="recipes-rating-item" value="5" name="rating">
-        </div>
-    </div>
-</div>
-      <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
-  </div>
-</li>
-            
+         <li class="recipes-list-item">
+         <button type="button" class="recipes-list-item-like-btn">
+           <svg class="recipes-list-item-like-btn-img" width="22" height="22">
+             <use href="./images/sprite.svg#icon-heart"></use>
+           </svg>
+         </button>
+         <h3 class="subtitle">${recipe.title}</h3>
+         <p class="recipes-list-item-text">${recipe.description}</p>
+         <div class="recipes-rating">
+           <div class="recipes-rating-value">${formattedRating}</div>
+           <div class="recipes-rating-body">
+             <div class="recipes-rating-active"></div>
+             <div class="recipes-rating-items">
+               <div class="recipes-rating-item" data-value="1">
+                 <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                   <use href="./images/sprite.svg#icon-star"></use>
+                 </svg>
+               </div>
+               <div class="recipes-rating-item" data-value="2">
+                 <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                   <use href="./images/sprite.svg#icon-star"></use>
+                 </svg>
+               </div>
+               <div class="recipes-rating-item" data-value="3">
+                 <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                   <use href="./images/sprite.svg#icon-star"></use>
+                 </svg>
+               </div>
+               <div class="recipes-rating-item" data-value="4">
+                 <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                   <use href="./images/sprite.svg#icon-star"></use>
+                 </svg>
+               </div>
+               <div class="recipes-rating-item" data-value="5">
+                 <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
+                   <use href="./images/sprite.svg#icon-star"></use>
+                 </svg>
+               </div>
+             </div>
+           </div>
+         </div>
+         <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
+         </div>
+       </li>  
  `
   }).join('');
   
