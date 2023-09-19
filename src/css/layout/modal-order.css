@@ -54,7 +54,7 @@
   /* display: flex; */
   width: 295px;
   height: 46px;
-  padding: 14px 169px 14px 18px;
+  padding: 14px 14px 14px 18px;
   gap: 32px;
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
@@ -75,6 +75,7 @@
   border-radius: 15px;
   border: 1px solid rgba(5, 5, 5, 0.2);
   margin-bottom: 34px;
+  padding: 14px;
 }
 .order-btn-div {
   display: flex;
