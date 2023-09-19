@@ -2,9 +2,9 @@
   width: 176px;
   height: 50px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: var(--black-rgba-2);
   background-color: transparent;
-  color: rgba(5, 5, 5, 0.5);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;
@@ -40,19 +40,19 @@
 .btn-for-filter {
   background-color: transparent;
   border: none;
-  color: rgba(5, 5, 5, 0.3);
+  color: var(--black-rgba-2);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
 }
-.btn-for-filter:hover,
-.btn-for-filter:focus {
-  color: #9bb537;
+
+.btn-for-filter:hover {
+  color: var(--green);
 }
 .btn-active {
-  color: #9bb537;
+  color: var(--green);
 }
 /* ==============================================FORM FILTER */
 .filter-form {
@@ -72,7 +72,9 @@
   width: 161px;
   height: 46px;
   border-radius: 15px;
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
+
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -85,7 +87,8 @@
   width: 161px;
   height: 46px;
   border-radius: 15px;
-  color: rgba(5, 5, 5, 0.5);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -99,7 +102,8 @@
   height: 46px;
   padding: 14px 48px;
   border-radius: 15px;
-  border: 1px solid var(--grey-inputs);
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
 }
 .search-input::placeholder {
   color: rgba(5, 5, 5, 0.5);
@@ -124,9 +128,9 @@
   height: 46px;
   border: 1px solid var(--grey-inputs);
   border-radius: 15px;
-
+  border: var(--black-rgba-2);
+  color: var(--black-rgba);
   padding: 12px 18px;
-  color: rgba(5, 5, 5, 0.5);
   font-family: Inter;
   font-size: 14px;
   font-style: normal;
@@ -147,8 +151,7 @@
   padding-right: 0;
 }
 .reset-label {
-  color: rgba(5, 5, 5, 0.5);
-  font-family: Inter;
+  color: var(--black-rgba);
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -230,7 +233,12 @@ select {
 .recipes-rating {
   margin-top: 16px;
   display: flex;
-}
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 32px 16px;
+  margin-top: 14px;
+  list-style: none;
+} */
 
 /*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {

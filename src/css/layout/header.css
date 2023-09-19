@@ -90,14 +90,34 @@
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
+}
+
+.modal-home:hover{
+font-weight: 600;
+color: var(--hover-modal-text);
+}
+
+.modal-home:focus{
+font-weight: 600;
+color: var(--hover-modal-text);
 }
 
 .modal-fav {
   color: var(--modal-text-black);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+.modal-fav:hover {
+  font-weight: 600;
+  color: var(--hover-modal-text);
+}
+
+.modal-fav:focus {
+  font-weight: 600;
+  color: var(--hover-modal-text);
 }
 .cross {
   position: absolute;
