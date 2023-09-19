@@ -1,3 +1,14 @@
+
+[data-theme="light"] {
+  --black: #000000;
+  --green: #00ff00;
+}
+
+[data-theme="dark"] {
+  --black: #ffffff;
+  --green: #ff0000;
+}
+
 .site-nav-ul {
   display: none;
 }

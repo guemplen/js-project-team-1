@@ -1,3 +1,19 @@
+/* [data-theme="light"] {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #dddddd;
+    --button-text-color: #000000;
+    --button-border-color: green;
+}
+
+[data-theme="dark"] {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    --button-background: #666666;
+    --button-text-color: #ffffff;
+    --button-border-color: red;
+} */
+
 @media screen and (min-width: 370px) {
 
     .container {
@@ -134,8 +150,6 @@
         padding-left: 20px;
         overflow: hidden;
     }
-
-
            
 
 
@@ -177,20 +191,20 @@
 
 /*///////TABLET///////////////*/
 
- @media screen and (min-width: 768px) {
+ /* @media screen and (min-width: 768px) {
 
     .hero-container{
         overflow: hidden!important;
         max-width: 768px;
         padding-left: 32px;
         padding-right: 32px;
-    }
+    } */
 
     /* .hero-wrapper {
         padding-left: 32px;
     } */
 
-    .slide-wrapper {
+    /* .slide-wrapper {
         height: 442px;
         display: flex !important;
     }
@@ -250,7 +264,7 @@
         border-radius: 15px;
     }
 
-}
+} */
 
 
 /*///////////PC//////////*/
@@ -392,7 +406,7 @@
 }
 
 .slick-dots {
-margin-bottom: 45px!important;
+    margin-bottom: 45px!important;
 }
 
-}
+} 
