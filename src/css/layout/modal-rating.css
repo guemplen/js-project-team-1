@@ -34,7 +34,12 @@
     stroke-width: 1.5; */
   }
 
-  .recipes-rating-item.active:hover {
+.active {
+    fill: var(--yellow);
+    stroke: none;
+}
+
+  /* .recipes-rating-item.active:hover {
     fill: var(--yellow);
     stroke: none;
   }
@@ -49,7 +54,7 @@
   .recipes-rating-item.active:hover ~ .recipes-rating-item {
     fill: var(--yellow);
     stroke: none;
-  }
+  } */
 
 /* --------------- Лайк ----------------- */
 

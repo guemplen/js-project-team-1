@@ -14,26 +14,26 @@ return starsArr.join("")
 
 
 // Кнопка лайку
-// const likeButton = document.querySelector('.recipes-list-item-like-btn');
-// const likedRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
-// const heartIcon = likeButton.querySelector('use');
-// const isLiked = likedRecipes.includes(recipeId);
+const likeButton = document.querySelector('.recipes-list-item-like-btn');
+const likedRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
+const heartIcon = likeButton.querySelector('use');
+const isLiked = likedRecipes.includes(recipeId);
 
-// if (isLiked) {
-//   heartIcon.classList.add('liked');
-// }
+if (isLiked) {
+  heartIcon.classList.add('liked');
+}
 
-// function toggleLike() {
-//     const index = likedRecipes.indexOf(recipeId);
-//     heartIcon.classList.toggle('liked');
+function toggleLike() {
+    const index = likedRecipes.indexOf(recipeId);
+    heartIcon.classList.toggle('liked');
   
-//     if (index === -1) {
-//       likedRecipes.push(recipeId);
-//     } else {
-//       likedRecipes.splice(index, 1);
-//     }
+    if (index === -1) {
+      likedRecipes.push(recipeId);
+    } else {
+      likedRecipes.splice(index, 1);
+    }
   
-//     localStorage.setItem('BI8886EB', JSON.stringify(likedRecipes));
-//   }
+    localStorage.setItem('BI8886EB', JSON.stringify(likedRecipes));
+  }
   
-//   likeButton.addEventListener('click', toggleLike);
+  likeButton.addEventListener('click', toggleLike);
