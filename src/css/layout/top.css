@@ -15,6 +15,7 @@
   font-weight: 600;
   line-height: 1.33;
   text-transform: uppercase;
+  color: var(--black-05);
 }
 
 .recipes-sidebar-popular-item {
@@ -38,7 +39,7 @@
   font-weight: 600;
   line-height: 1.28;
   text-transform: uppercase;
-  color: --black;
+  color: var(--black-05);
 }
 
 .recipes-sidebar-popular-item-descr-text {
@@ -54,7 +55,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 1.33;
-  color: --black;
+  color: var(--black-rgba);
 }
 
 @media screen and (min-width: 768px) {
@@ -75,6 +76,7 @@
     font-weight: 600;
     line-height: 1.33;
     text-transform: uppercase;
+    color: var(--black-05);
   }
 
   .recipes-sidebar-popular-item {
@@ -104,7 +106,7 @@
     -webkit-line-clamp: 1; /* количество строк */
     -webkit-box-orient: vertical;
     /* white-space: nowrap; */
-    color: --black;
+    color: var(--black-05);
   }
 
   .recipes-sidebar-popular-item-descr-text {
@@ -120,7 +122,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
-    color: --black;
+    color: var(--black-rgba);
   }
 }
 
@@ -142,6 +144,7 @@
     font-weight: 600;
     line-height: 1.16;
     text-transform: uppercase;
+    color: var(--black-05);
   }
 
   .recipes-sidebar-popular-item {
@@ -171,7 +174,7 @@
     -webkit-line-clamp: 1; /* количество строк */
     -webkit-box-orient: vertical;
     /* white-space: nowrap; */
-    color: --black;
+    color: var(--black-05);
   }
 
   .recipes-sidebar-popular-item-descr-text {
@@ -187,6 +190,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: 1.4;
-    color: --black;
+    color: var(--black-rgba);
   }
 }
