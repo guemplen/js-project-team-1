@@ -22,7 +22,7 @@
     <main>
         <!--favorites.html-->
         <section>
-            <div class="favorites-hero container">
+            <div class="favorites-hero container-favorites">
                 <picture class="favorites-hero-img">
                     <source srcset="
                 ./images/favorites/desktop-favorites-1x.jpg 1x,
@@ -46,7 +46,7 @@
             </div>
         </section>
         <section>
-            <div class="container">
+            <div class="container-favorites">
                 <h2 class="visually-hidden">Favorites</h2>
 
                 <div class="favorites-error visually-hidden">
@@ -60,12 +60,12 @@
                     </p>
                 </div>
 
-                <div class="favorites-categories">
+                <div class="favorites-categories scroll-categories">
                     <button class="js-all-categories is-hiden favorites-btn">All categories</button>
                     <div class="js-div-button"></div>
                 </div>
 
-                <div class="favorites-list">
+                <div class="favorites-list container-favorites">
                     <ul class="recipes-list">
                     </ul>
                 </div>
@@ -73,6 +73,8 @@
                 <div id="pagination" class="tui-pagination visually-hidden"></div>
             </div>
         </section>
+
+        <load src="./partials/modal-order.html" />
 
     </main>
     <script type="module" src="./index.js"></script>
