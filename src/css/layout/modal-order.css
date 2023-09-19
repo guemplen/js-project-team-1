@@ -16,7 +16,7 @@
   position: absolute;
   width: 335px;
   height: 582px;
-  background-color: #fff;
+  background-color: var(--white);
 }
 .btn-cross-2 {
   position: absolute;
@@ -29,14 +29,14 @@
   align-items: center;
 }
 .cross-2 {
-  stroke: #050505;
+  stroke: var(--black-05);
 }
 
 /** FORM **/
 .form-h2 {
   margin-top: 28px;
   text-transform: uppercase;
-  color: #050505;
+  color: var(--black-05);
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
@@ -51,21 +51,23 @@
   margin-top: 28px;
 }
 .order-box {
-  /* display: flex; */
   width: 295px;
   height: 46px;
   padding: 14px 14px 14px 18px;
   gap: 32px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--black-rgba-2);
+  background-color: var(--white);
+  color: var(--black-05);
 }
 .order-text {
-  margin-bottom: 8px;
-  color: rgba(5, 5, 5, 0.5);
+  margin: 0 0 8px;
+  color: var(--black-rgba);
   font-weight: 500;
   line-height: 1.2;
 }
 .textarea-box {
+  margin: 0 auto;
   resize: none;
   display: flex;
   width: 295px;
@@ -73,9 +75,10 @@
   align-items: flex-start;
   gap: 32px;
   border-radius: 15px;
-  border: 1px solid rgba(5, 5, 5, 0.2);
+  border: 1px solid var(--black-rgba-2);
   margin-bottom: 34px;
   padding: 14px;
+  background-color: var(--white);
 }
 .order-btn-div {
   display: flex;
@@ -90,4 +93,32 @@
   border: none;
   border-radius: 15px;
   background: #9bb537;
+}
+@media screen and (min-width: 768px) {
+  .order-now-modal {
+    width: 440px;
+    height: 600px;
+    background-color: var(--white);
+  }
+  .order-box {
+    margin: 0 auto;
+    width: 360px;
+    height: 48px;
+  }
+  .textarea-box {
+    width: 360px;
+    height: 100px;
+  }
+  /* form.order-form input[type='email'] {
+    margin: 0 40px;
+  } */
+  .order-modal-btn {
+    width: 360px;
+  }
+  .order-text {
+    margin: 0 20px 8px;
+  }
+  .form-h2 {
+    margin-left: 40px;
+  }
 }

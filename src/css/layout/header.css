@@ -43,19 +43,29 @@
 }
 
 .cart {
+  stroke: var(--black);
+  fill: none;
   display: flex;
   justify-content: center;
   margin-right: 14px;
+  transition: var(--transition-dur-and-func);
+}
+.cart:hover {
+  stroke: var(--green);
+}
+.cart:focus {
+  stroke: var(--green);
 }
 .burger {
   display: flex;
   justify-content: center;
   stroke: var(--black);
+  transition: var(--transition-dur-and-func);
 }
-.cart {
-  stroke: var(--black);
-  fill: none;
+.burger:hover {
+  stroke: var(--green);
 }
+
 /** MODAL **/
 .backdrop {
   z-index: 9999999999;
@@ -65,7 +75,7 @@
   left: 0;
   width: 50vw;
   height: 100vh;
-  background-color: var(--green);
+  background-color: var(--green-backdrop);
   transition: left 0.3s ease;
 }
 .modal-text-div {
@@ -76,20 +86,16 @@
   gap: 16px;
 }
 .modal-home {
-  color: var(--white);
+  color: var(--modal-text-black);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
-.modal-home {
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 500;
-}
+
 .modal-fav {
-  color: var(--white);
+  color: var(--modal-text-black);
   font-size: 12px;
   font-weight: 500;
 }
@@ -208,6 +214,10 @@ input:checked + .slider:before {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    transition: var(--transition-dur-and-func);
+  }
+  .site-nav-fav:hover {
+    color: var(--green);
   }
   .burger {
     display: none;
