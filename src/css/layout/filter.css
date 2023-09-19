@@ -238,7 +238,7 @@ select {
   gap: 32px 16px;
   margin-top: 14px;
   list-style: none;
-} */
+} 
 
 /*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {
