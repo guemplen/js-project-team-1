@@ -11,7 +11,15 @@ const refs = {
   recipeList: document.querySelector('.recipes-list'),
   resetFilterBtn: document.querySelector('.reset-filter-container'),
 };
-const newClass = new TastyTreatsAPI();
+
+let newClass;
+if (window.innerWidth < 768) {
+  newClass = new TastyTreatsAPI(6);
+} else if (window.innerWidth > 768 && window.innerWidth < 1280) {
+  newClass = new TastyTreatsAPI(8);
+} else {
+  newClass = new TastyTreatsAPI(9);
+}
 ///Вішаємо подію на кнопку "Всі категорії"
 refs.btnAllCategories.addEventListener('click', onbtnAllCategoriesClick);
 async function onbtnAllCategoriesClick(event) {
