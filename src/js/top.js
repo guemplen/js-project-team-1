@@ -17,7 +17,7 @@ async function renderPopularRecipes() {
     <li class="recipes-sidebar-popular-item">
       <img class="recipes-sidebar-popular-item-img" src="${recipe.preview}" alt="${recipe.title}" width="64" height="64">
       <div class="recipes-sidebar-popular-item-descr">
-        <h3 class="subtitle">${recipe.title}</h3>
+        <h3 class="popular-subtitle">${recipe.title}</h3>
         <p class="recipes-sidebar-popular-item-descr-text">${recipe.description}</p>
       </div>
     </li>

@@ -32,7 +32,7 @@
   height: 64px;
 }
 
-.subtitle {
+.popular-subtitle {
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -92,7 +92,7 @@
     height: 48px;
   }
 
-  .subtitle {
+  .popular-subtitle {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -159,7 +159,7 @@
     height: 64px;
   }
 
-  .subtitle {
+  .popular-subtitle {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
