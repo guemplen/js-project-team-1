@@ -16,6 +16,15 @@ const recipesListEl = document.querySelector('.recipes-list');
 const resetFilterBtn = document.querySelector('.reset-filter-container');
 const sidebarList = document.querySelector('.recipes-sidebar-search-list');
 // //---------------------------------------------------------  TIME
+let tastyTreatsAPI;
+if (window.innerWidth < 768) {
+  tastyTreatsAPI = new TastyTreatsAPI(6);
+} else if (window.innerWidth > 768 && window.innerWidth < 1280) {
+  tastyTreatsAPI = new TastyTreatsAPI(8);
+} else {
+  tastyTreatsAPI = new TastyTreatsAPI(9);
+}
+
 function renderOptionsTime() {
   const data = [];
 
@@ -36,8 +45,6 @@ function renderOptionsTime() {
 renderOptionsTime();
 
 //---------------------------------------------------------  COUNTRY
-const tastyTreatsAPI = new TastyTreatsAPI();
-
 tastyTreatsAPI
   .getCountry()
   .then(response => renderOptionsCountry(response.data))

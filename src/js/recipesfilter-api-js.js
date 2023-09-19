@@ -2,18 +2,19 @@ import axios from 'axios';
 export class TastyTreatsAPI {
   static BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/recipes';
 
-  constructor() {
+  constructor(limit) {
     this.title = '';
     this.category = '';
     this.page = 1;
     this.time = '';
     this.area = '';
     this.ingredient = '';
+    this.limit = limit;
   }
 
   filterRecipes() {
     const params = new URLSearchParams({
-      limit: 9,
+      limit: this.limit,
     });
 
     for (const key of Object.keys(this)) {
