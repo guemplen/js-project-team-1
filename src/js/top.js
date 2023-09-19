@@ -1,6 +1,6 @@
-import { TastyTreatsAPI } from './api';
+import { TastyTreats_API } from './api';
 
-const api = new TastyTreatsAPI();
+const api = new TastyTreats_API();
 const ulElement = document.querySelector('.recipes-sidebar-popular-list');
 
 async function renderPopularRecipes() {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export class TastyTreatsAPI {
+export class TastyTreats_API {
   constructor() {
     this.customAxios = axios.create({
       baseURL: 'https://tasty-treats-backend.p.goit.global/api',
