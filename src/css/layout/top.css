@@ -3,9 +3,9 @@
   margin-top: 20px;
 }
 
-.container {
+/* .container {
   max-width: 375px;
-}
+} */
 
 .recipes-sidebar-popular-title {
   max-width: 255px;
@@ -58,9 +58,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
+  /* .container {
     max-width: 768px;
-  }
+  } */
 
   .recipes-sidebar-popular-list {
     /* padding-inline-start: 0px; */
@@ -125,9 +125,9 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .container {
-    max-width: 768px;
-  }
+  /* .container {
+    max-width: 1280px;
+  } */
 
   .recipes-sidebar-popular-list {
     /* padding-inline-start: 0px; */
