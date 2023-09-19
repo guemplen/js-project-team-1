@@ -14,23 +14,34 @@ const favoriteBtn = document.querySelector('.r-modal-favorite-btn');
 const recipeDB = new RecipeDB(); // Створення нового екземпляра класу RecipeDB
 let toId = ''; // Ініціалізація змінної toId
 
+
+ // Ця функція встановлює обробник подій для елементу DOM з класом 'фильтру галереї', 
+    // який викликає функцію openModal при кліку на цей елемент.
 function eventOpenrModal() {
-    const getIdElelment = document.querySelector('.#') // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    const getIdElelment = document.querySelector('.#') // !!!
     getIdElelment.addEventListener('click', openModal);
 }
 
 function eventOpenrModalTwo() {
-    const getIdElelmentTwo = document.querySelector('.#'); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! popular recipes
+    const getIdElelmentTwo = document.querySelector('.#'); // !!! // https://prnt.sc/9aWEweNfRDan popular recipes 
     getIdElelmentTwo.addEventListener('click', openModal);
 }
 
+// Ця функція використовує функцію getRecipeDetails для завантаження даних рецепту на основі змінної toId. 
+// Після отримання даних вона вставляє вміст в модальне вікно за допомогою функції addContent. 
+// Якщо сталася помилка, вона логує її.
 function loadContent() {
     return getRecipeDetails(toId).then( data => modalWindow.insertAdjacentHTML('afterbegin', addContent(data))).catch(err => console.log(err));
 }
 
+// Ця частина коду визначає функцію addContent, яка генерує HTML-структуру для відображення деталей рецепту на сторінці.
+// що робиться у функції 
 function addContent(arr) {
     const {title, instructions, ingredients, youtube, preview, rating, tags, time, _id } = arr;
+   // Ця функція приймає об'єкт рецепту arr і генерує рядок HTML, який відображає деталі рецепту. Вона розбирає об'єкт рецепту 
+    // і використовує його дані для створення HTML-структури, такі як назва, інструкції, інгредієнти тощо.
 
+    // / Оголошення двох порожніх рядків для зберігання тегів і інгредієнтів
     let newTags ='';
     tags.forEach(element => {
         newTags+= `<span class="r-modal-tag">#${element}</span>`;
@@ -41,8 +52,8 @@ function addContent(arr) {
         newIngredients+= `<div class="r-modal-ingerdients-name">${element.name}<div class="r-modal-ingerdients-value">${element.measure}</div></div>`
     });
 
-
-    // !!! приблизно накидав як повинні бути зірочки в рейтингу 
+  // Повертається рядок HTML для відображення деталей рецепт
+    //зірочки в рейтингу 
     return `
     <iframe 
      src="${youtube.replace('watch?v=', 'embed/')}"
@@ -80,22 +91,27 @@ function addContent(arr) {
     <p class="r-modal-instructions">${instructions}</p>`;
 };
 
-function openModal (event) {
-    if(!event.target.id) {
-        return;
+ // Ця функція відповідає за відкриття модального вікна при кліку на певний елемент на сторінці. Вона виконує такі
+    //  дії, як завантаження контенту, показ вікна, блокування прокрутки та додавання обробників подій для закриття вікна.
+function openModal(event) {
+    // Перевірка, чи був клік на елементі з ідентифікатором
+    if (!event.target.id) {
+        return; // Якщо клік не був на елементі з ідентифікатором, функція завершується
     }
 
-    toId = event.target.id;
-    loadContent();
-    seeModal.classList.remove('visually-hidden');
-    body.classList.add("no-scroll");
-    document.addEventListener('keydown', closeOnEscape);
-    seeModal.addEventListener('click', closeOnTarget);
-    // ratingBtn.addEventListener('click', closeOnTarget);
-    closeBtn.addEventListener('click', closeOnTarget);
-    favoriteBtn.addEventListener('click', favoriteBtnHandleFunction);
-
-
+    toId = event.target.id; // Збереження ідентифікатора, на якому був клік
+    loadContent(); // Завантаження вмісту модального вікна
+    seeModal.classList.remove('visually-hidden'); // Показ модального вікна, видалення класу visually-hidden, 
+    // який ховає вікно
+    body.classList.add("no-scroll"); // Додавання класу no-scroll для вимкнення прокрутки сторінки
+    document.addEventListener('keydown', closeOnEscape); // Додавання обробник події для закриття модального вікна 
+    // при натисканні клавіші "Escape"
+    seeModal.addEventListener('click', closeOnTarget); // Додавання обробник події для закриття модального вікна 
+    // при кліку на вікно
+    closeBtn.addEventListener('click', closeOnTarget); // Додавання обробник події для закриття модального вікна 
+    // при кліку на кнопку "Закрити"
+    favoriteBtn.addEventListener('click', favoriteBtnHandleFunction); // Додавання обробник події для виклику функції
+    //  "favoriteBtnHandleFunction" при кліку на кнопку "Додати в обране"
 }
 
 function closeModal(event) {
