@@ -5,15 +5,13 @@
   --black: #161616;
   --black-05: #050505;
   --grey: #ffffff; /*для випадаючого списку інпута*/
-  --grey-inputs: rgba(5, 5, 5, 0.1);
+  --grey-inputs: #05050533; /*чорний напівпрозорий*/
   --switch-btn-grey: #cecdcd; /* сірий для перемикача теми*/
   --green-gradient: #9bb537, #9bb537b0; /*для перемикача теми */
   --img-grad: radial-gradient(circle, var(--green), 10%, #050505);
   --border: none;
   --black-rgba: rgba(5, 5, 5, 0.5);
   --black-rgba-2: rgba(5, 5, 5, 0.2);
-  --black-rgba-3: rgba(5, 5, 5, 0.3);
-  --black-rgba-still: rgba(5, 5, 5, 0.5);
   --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --modal-text-black: #f8f8f8;
   --green-backdrop: #9bb537;
@@ -27,17 +25,17 @@
   --black: #f8f8f8;
   --black-05: #fff;
   --grey: #fff; /*для випадаючого списку інпута*/
-  --grey-inputs: rgba(255, 255, 255, 0.1); /*чорний напівпрозорий*/
+  --grey-inputs: #05050533; /*чорний напівпрозорий*/
   --switch-btn-grey: #cecdcd; /* сірий для перемикача теми*/
   --green-gradient: #9bb537, #9bb537b0; /*для перемикача теми */
   --img-grad: radial-gradient(circle, var(--green), 10%, #050505);
   --border: 1px solid var(--green);
   --black-rgba: rgba(255, 255, 255, 0.5);
   --black-rgba-2: rgba(255, 255, 255, 0.2);
-  --black-rgba-3: rgba(255, 255, 255, 0.3);
-  --black-rgba-still: rgba(5, 5, 5, 0.5);
   --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --modal-text-black: #f8f8f8;
   --green-backdrop: #050505;
   --hover-modal-text: var(--green);
+
+
 }
