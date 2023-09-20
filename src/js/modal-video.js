@@ -5,6 +5,7 @@
 
 // !!! import{ # , RecipeDB} from './ #' треба зробити імпорт функції та класів додавання в фаворит
 import { TastyTreats_API } from './api';
+import starImage from '/src/images/sprite.svg';
 import { Notify } from 'notiflix';
 
 const apiModal = new TastyTreats_API();
@@ -91,19 +92,19 @@ function addContent(arr) {
     )}</div>
     <div class="r-modal-star-wrap">
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href=".${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
     </div>
     <div class="r-modal-time">${time} min</div></div></div>
