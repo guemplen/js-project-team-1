@@ -38,25 +38,25 @@ export class TastyTreats_API {
   async getRecipesById(id) {
     try {
       const response = await this.customAxios.get(`/recipes/${id}`);
-      console.log('RecipesById', response.data);
+      // console.log('RecipesById', response.data);
       return response.data;
     } catch (error) {
       throw error;
     }
   }
 
-  //   async addRecipeRating(id, rating) {
-  //     try {
-  //       const response = await this.customAxios.patch(
-  //         `/recipes/${id}/rating`,
-  //         rating
-  //       );
-  //       console.log('RecipeRating', response.data);
-  //       return response.data;
-  //     } catch (error) {
-  //       throw error;
-  //     }
-  //   }
+  async addRecipeRating(id, ...rating) {
+    try {
+      const response = await this.customAxios.patch(
+        `/recipes/${id}/rating`,
+        rating
+      );
+      console.log('RecipeRating', response.data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 
   //   async getAllAreas() {
   //     try {
