@@ -219,7 +219,7 @@ export function renderListItem(data) {
                               </div>
                           </div>
                         </div>
-                        <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
+                        <button class="recipes-list-see-recipe-btn" type="button" data-id="${recipe._id}">See recipe</button>
                     </div>
               </li>
     `;
