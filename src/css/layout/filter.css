@@ -30,7 +30,7 @@
 .btn-all-categories:hover,
 .btn-all-categories:focus {
   color: rgba(248, 248, 248, 1);
-  background: #9bb537;
+  background: var(--green);
 }
 .recipes-sidebar-search-list {
   height: 198px;
@@ -74,11 +74,9 @@
 
 .btn-for-filter:hover {
   color: var(--green);
-  background-color: var(--grey-inputs);
 }
 .btn-active {
   color: var(--green);
-  background-color: var(--grey-inputs);
 }
 /* ==============================================FORM FILTER */
 .filter-form {
@@ -97,6 +95,11 @@
 .select-time:hover {
   background-color: var(--grey-inputs);
 }
+.select-time:focus {
+  color: var(--black);
+}
+
+
 .select-time {
   width: 161px;
   height: 46px;
@@ -129,6 +132,9 @@
 .select-country:hover {
   background-color: var(--grey-inputs);
 }
+.select-country:focus {
+  color: var(--black);;
+}
 .search-input {
   width: 335px;
   height: 46px;
@@ -136,7 +142,14 @@
   border-radius: 15px;
   border: 1px solid var(--black-rgba-3);
   background-color: transparent;
+  color: var(--black-rgba);
 }
+
+.search-input:hover {
+color: white!important;
+}
+
+
 .search-input::placeholder {
   color: var(--black-rgba);
   font-family: Inter;
@@ -147,9 +160,6 @@
 }
 .search-input:focus {
   color: var(--black-rgba);
-}
-.search-input:hover::placeholder {
-  background-color: var(--grey-inputs);
 }
 
 .input-wraper-for-icon {
@@ -185,6 +195,10 @@
 }
 .select-ingredient:hover {
   background-color: var(--grey-inputs);
+}
+
+.select-ingredient:focus {
+  color: var(--black);
 }
 .reset-filter-container {
   display: flex;
