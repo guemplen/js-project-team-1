@@ -238,5 +238,6 @@ resetFilterBtn.addEventListener('click', event => {
     tastyTreatsAPI.ingredient = '';
     tastyTreatsAPI.title = '';
     tastyTreatsAPI.category = '';
+    recipesListEl.innerHTML = '';
   }
 });
