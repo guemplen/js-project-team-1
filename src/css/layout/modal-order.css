@@ -94,6 +94,9 @@
   border-radius: 15px;
   background: var(--green);
 }
+.order-modal-btn:hover {
+  background-color: #abc547;
+}
 @media screen and (min-width: 768px) {
   .order-now-modal {
     width: 440px;
