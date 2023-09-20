@@ -91,14 +91,14 @@
     margin-top: 1px;
      border-radius: 15px;
      font-size: 14px;
-     color: rgba(5, 5, 5, 0.3);
+     color: var(--black-rgba-3);
      font-family: Inter, sans-serif;
      font-style: normal;
      font-weight: 500;
      line-height: 1.28;
      padding: 14px 18px;
      background-color: var(--white);
-     border: 1px solid rgba(5, 5, 5, 0.2);
+     border: 1px solid var(--black-rgba-2);
      outline: none;
      cursor: pointer;
 

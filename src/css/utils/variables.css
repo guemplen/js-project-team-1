@@ -5,7 +5,7 @@
   --black: #161616;
   --black-05: #050505;
   --grey: #ffffff; /*для випадаючого списку інпута*/
-  --grey-inputs: rgba(5, 5, 5, 0.1);
+  --grey-inputs: rgba(32, 32, 31, 0.037);
   --switch-btn-grey: #cecdcd; /* сірий для перемикача теми*/
   --green-gradient: #9bb537, #9bb537b0; /*для перемикача теми */
   --img-grad: radial-gradient(circle, var(--green), 10%, #050505);

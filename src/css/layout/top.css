@@ -18,10 +18,7 @@
   color: var(--black-05);
   transition: var(--transition-dur-and-func);
 }
-.recipes-sidebar-popular-title:hover {
-  color: var(--green);
-  cursor: pointer;
-}
+
 .recipes-sidebar-popular-item {
   position: relative;
   display: flex;
@@ -42,7 +39,7 @@
 }
 
 .recipes-sidebar-popular-item:hover::before {
-  background-color: var(--black-rgba-2);
+  background-color: var(--grey-inputs);
   cursor: pointer;
   opacity: 0.5;
 }

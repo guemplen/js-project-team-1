@@ -81,7 +81,7 @@ function renderOptionsIngridients(data) {
 //---------------------------------------------------------  EVENTS
 function onDivSelectItems(event) {
   //МІНЯЄ КОЛІР НА СЕЛЕКТОРІ ПРИ ВИБОРІ ПЕРШОЇ І НАСТУПНИХ ОПЦІЙ
-  event.target.style.color = 'var(--black)';
+  // event.target.style.color = 'var(--black-05)';
   //
   const { name, value } = event.target;
   switch (name) {
@@ -228,9 +228,9 @@ resetFilterBtn.addEventListener('click', event => {
   } else {
     //ПОВЕРТАЄ КОЛІР  СЕЛЕКТОРУ ДО ДЕФОЛТУ//
     formEl.reset();
-    iconSearchEl.style.fill = 'rgba(5, 5, 5, 0.5)';
+    // iconSearchEl.style.fill = 'var(----black-rgba)';
     selectEl.forEach(el => {
-      el.style.color = 'rgba(5, 5, 5, 0.50)';
+      // el.style.color = 'var(----black-rgba)';
     });
     //===================================//
     tastyTreatsAPI.area = '';
