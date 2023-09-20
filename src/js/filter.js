@@ -161,16 +161,27 @@ export function renderListItem(data) {
   const markup = data
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
+      const isActive = isRecipeLiked(recipe._id); // Перевіряємо, чи рецепт сподобався користувачеві
       return `
-              <li  class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${recipe.preview});
+              <li  class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${
+                recipe.preview
+              });
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
 ;
               ;">
-                    <button value = "${recipe._id}" type="button" class="recipes-list-item-like-btn">
-                        <svg data-value = "${recipe._id}" class="recipes-list-item-like-btn-img" width="22" height="22">
-                            <use class='not-active-heart' data-value = "${recipe._id}" href="${heartImage}#icon-heart"></use>
+                    <button value = "${
+                      recipe._id
+                    }" type="button" class="recipes-list-item-like-btn">
+                        <svg data-value = "${
+                          recipe._id
+                        }" class="recipes-list-item-like-btn-img" width="22" height="22">
+                            <use class="${
+                              isActive ? 'active-heart' : 'not-active-heart'
+                            }" data-value = "${
+        recipe._id
+      }" href="${heartImage}#icon-heart"></use>
                         </svg>
                     </button>
                     <h3 class="subtitle">${recipe.title}</h3>
@@ -216,6 +227,11 @@ export function renderListItem(data) {
     .join('');
 
   recipesListEl.innerHTML = markup;
+}
+function isRecipeLiked(recipeId) {
+  const storedData = localStorage.getItem('BI8886EB');
+  const existingData = storedData ? JSON.parse(storedData) : [];
+  return existingData.includes(recipeId);
 }
 
 divSelectItems.addEventListener('change', onDivSelectItems);
