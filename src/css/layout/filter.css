@@ -240,6 +240,8 @@ select {
   position: absolute;
   top: 16px;
   right: 16px;
+  background-color: transparent;
+  border: none;
 }
 .recipes-list {
   padding: 0;
@@ -320,7 +322,12 @@ select {
   margin-top: 14px;
   list-style: none;
 }
-
+.not-active-heart {
+  fill: transparent;
+}
+.active-heart {
+  fill: var(--white);
+}
 /*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {
   .icon-input {
