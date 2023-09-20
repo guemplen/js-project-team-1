@@ -16,7 +16,6 @@ const load = key => {
  class UnsplashAPI {
   static BASE_URL = 'https://tasty-treats-backend.p.goit.global/api';
   
-
   constructor() {
     this.query = 0;
   }
@@ -34,15 +33,9 @@ const divEl = document.querySelector(".favorites-error");
 const divButtonEl = document.querySelector(".js-div-button");
 const allCategoriesEl = document.querySelector(".js-all-categories");
 
-
-
 const unsplashAPI = new UnsplashAPI();
 unsplashAPI.query = 0;
 let productsTocart = [];
-
-
-
-
 
 const onIntersectingElIntersectingViewport = async entries => {
    
@@ -94,7 +87,9 @@ function createGalleryCards (arr) {
      let roundedNumber = parseFloat(productinfo.rating.toFixed(1));
 
          return  `
-          <li class="recipes-list-item" style="background-image: url(${productinfo.thumb}); background-repeat: no-repeat">
+          <li class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${productinfo.thumb}); background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat">
   <button type="button" class="recipes-list-item-like-btn">
       <svg class="recipes-list-item-like-btn-img" width="22" height="22">
           <use href="./images/icons.svg#heart"></use>
@@ -165,7 +160,7 @@ const selectcategory = event => {
 
   createGalleryCards(arrCategory);
 
-  allCategoriesEl.classList.remove('is-hiden')
+  allCategoriesEl.classList.remove('is-hiden');
 
 }
 
@@ -176,7 +171,7 @@ const allCategories = event => {
     return;
   }
 
-  createGalleryCards(productsTocart)
+  createGalleryCards(productsTocart);
   
   allCategoriesEl.classList.add('is-hiden');
 }
