@@ -1,28 +1,3 @@
-// const allLiEl = recipeList.querySelectorAll('.recipes-list-item');
-// const likeButton = document.querySelector('.recipes-list-item-like-btn');
-// const likedRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
-// const isLiked = likedRecipes.includes(recipeId);
-// if (isLiked) {
-//   heartIcon.classList.add('liked');
-// }
-// function toggleLike() {
-//   const index = likedRecipes.indexOf(recipeId);
-//   likeButton.classList.toggle('liked');
-//   if (index === -1) {
-//     likedRecipes.push(recipeId);
-//   } else {
-//     likedRecipes.splice(index, 1);
-//   }
-//   localStorage.setItem('BI8886EB', JSON.stringify(likedRecipes));
-// }
-// likeButton.addEventListener('click', toggleLike);
-
-// ==================
-// 1.Повішуємо подію на ul і робимо перевірку що nodeName event.target = "LI".
-// 2.Li елемент на який спрацювала подія - event.target
-// 3.Витягувати id li-шки на яку був клік через event.target.value;
-// 4.Відсилаємо значення event.target.value в LocalStorage
-//5.Знайти функцію рендера і робимо там перевірку : питягуємо масив локал сторедж , якщо поточний id = id з локал сторедж то додаємо клас ектів , якщо ні , то клас інектів
 const refs = {
   recipeList: document.querySelector('.recipes-list'),
   heartBtn: document.querySelectorAll('.recipes-list-item-like-btn'),
