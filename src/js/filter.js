@@ -208,6 +208,7 @@ export function renderListItem(data) {
                     </button>
                     <h3 class="subtitle">${recipe.title}</h3>
                     <p class="recipes-list-item-text">${recipe.description}</p>
+                    <div class="rating-container">
                       <div class="recipes-rating">
                         <div class="recipes-rating-value">${formattedRating}</div>
                             <div class="recipes-rating-body">
@@ -217,9 +218,10 @@ export function renderListItem(data) {
                               </div>
                           </div>
                         </div>
-                        <button class="recipes-list-see-recipe-btn" type="button" data-id="${
+                        <div><button class="recipes-list-see-recipe-btn" type="button" data-id="${
                           recipe._id
-                        }">See recipe</button>
+                        }">See recipe</button></div>
+                    </div>
                     </div>
               </li>
     `;
