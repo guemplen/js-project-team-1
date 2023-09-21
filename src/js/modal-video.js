@@ -19,18 +19,6 @@ const favoriteBtn = document.querySelector('.r-modal-favorite-btn');
 // const recipeDB = new #(); // Створення нового екземпляра класу RecipeDB
 let toId = ''; // Ініціалізація змінної toId
 
-// Ця функція встановлює обробник подій для елементу DOM з класом 'фильтру галереї',
-// який викликає функцію openModal при кліку на цей елемент.
-// function eventOpenrModal() {
-//   const getIdElelment = document.querySelector('#'); // !!!
-//   getIdElelment.addEventListener('click', openModal);
-// }
-
-// function eventOpenrModalTwo() {
-//   const getIdElelmentTwo = document.querySelector(''#''); // !!! // https://prnt.sc/9aWEweNfRDan popular recipes
-//   getIdElelmentTwo.addEventListener('click', openModal);
-// }
-
 // Ця функція використовує функцію getRecipeDetails для завантаження даних рецепту на основі змінної toId.
 // Після отримання даних вона вставляє вміст в модальне вікно за допомогою функції addContent.
 // Якщо сталася помилка, вона логує її.
@@ -132,6 +120,7 @@ function openModal(recipeId) {
   // при кліку на кнопку "Закрити"
   favoriteBtn.addEventListener('click', favoriteBtnHandleFunction); // Додавання обробник події для виклику функції
   //  "favoriteBtnHandleFunction" при кліку на кнопку "Додати в обране"
+  updateFavoriteButtonState(recipeId);
 }
 
 function closeModal(event) {
@@ -163,24 +152,12 @@ function closeOnEscape(e) {
     closeModal();
   }
 }
-function selectFavoriteRecipe(recipeInfo) {
-  recipeDB.getFromDB().map(recipe => {
-    if (recipe.id !== recipeInfo.id) {
-      recipeDB.saveIntoDB(recipeInfo);
-      favoriteBtn.textContent = 'Remove from favorites';
-    } else if (recipe.id === recipeInfo.id) {
-      recipeDB.removeFromDB(recipeInfo);
-      favoriteBtn.textContent = 'Add to favorite';
-    }
-  });
-}
 
 function favoriteBtnHandleFunction(e) {
   const parentWrap = e.target.parentNode;
   const siblingWrap = parentWrap.previousElementSibling;
   const recipeId = siblingWrap.querySelector('.r-modal-name').dataset.id;
   const favoriteRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
-
   const isFavorite = favoriteRecipes.includes(recipeId);
 
   if (isFavorite) {
@@ -198,17 +175,12 @@ function favoriteBtnHandleFunction(e) {
   }
 }
 
-// function favoriteBtnHandleFunction(e) {
-//   const parentWrap = e.target.parentNode;
-//   const siblingWrap = parentWrap.previousElementSibling;
-//   recipeInfo = {
-//     id: siblingWrap.querySelector('.r-modal-name').dataset.id,
-//     name: siblingWrap.querySelector('.r-modal-name').textContent,
-//     image: siblingWrap.querySelector('.r-modal-video').poster,
-//     rating: siblingWrap.querySelector('.r-modal-rating').textContent,
-//     description: siblingWrap.querySelector('.r-modal-instructions').textContent,
-//   };
-//   selectFavoriteRecipe(recipeInfo);
-// }
+function updateFavoriteButtonState(recipeId) {
+  const favoriteRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
+  const isFavorite = favoriteRecipes.includes(recipeId);
+  favoriteBtn.textContent = isFavorite
+    ? 'Remove from favorites'
+    : 'Add to favorite';
+}
 
-export { eventOpenrModal, eventOpenrModalTwo, toId, closeModal, openModal };
+export { toId, closeModal, openModal };
