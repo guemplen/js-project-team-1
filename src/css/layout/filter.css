@@ -73,11 +73,11 @@
 }
 
 .btn-for-filter:hover {
-  color: var(--green);
+  background-color: var(--green);
 }
-.btn-active {
+/* .btn-active {
   color: var(--green);
-}
+} */
 /* ==============================================FORM FILTER */
 .filter-form {
   margin-top: 40px;
