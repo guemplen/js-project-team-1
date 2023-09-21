@@ -66,6 +66,29 @@
   position: relative;
 }
 
+<<<<<<< HEAD
+ .favorites-error-text {
+     margin: auto;
+     text-align: center;
+     font-size: 14px;
+     font-weight: 400;
+     color: var(--black-05);
+
+ }
+
+
+  .favorites-categories {
+    display: flex;
+    white-space: nowrap;
+    margin-left: 0px;
+    gap: 12px;
+    overflow-x: hidden;
+ }  
+ .js-div-button{
+    display: flex;
+    gap: 12px;
+ }
+=======
 .favorites-error-js {
   margin-top: 260px;
 }
@@ -156,6 +179,7 @@
     gap: 15px;
     display: flex;
   }
+>>>>>>> main
 
   .favorites-btn {
     font-size: 16px;
@@ -163,6 +187,104 @@
   }
 }
 
+<<<<<<< HEAD
+ .favorites-btn {
+    display: inline-block;
+    margin-top: 1px;
+     border-radius: 15px;
+     font-size: 14px;
+     color: var(--black-rgba-3);
+     font-family: Inter, sans-serif;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 1.28;
+     padding: 14px 18px;
+     background-color: var(--white);
+     border: 1px solid var(--black-rgba-2);
+     outline: none;
+     cursor: pointer;
+
+     transition: color var(--transition-dur-and-func),
+         background-color var(--transition-dur-and-func),
+         border-color var(--transition-dur-and-func);
+ }
+
+ .favorites-btn:is(:hover, :focus) {
+     background-color: var(--green);
+     color: var(--white);
+     border-color: var(--green);
+ }
+
+
+ @media screen and (min-width: 375px) {
+     .favorites-hero {
+         padding-bottom: 40px;
+     }
+
+     .favorites-hero-img {
+         width: 335px;
+     }
+         .scroll-categories {
+             padding-bottom: 0px;
+             width: 425px;
+             white-space: nowrap;
+             overflow-x: auto;
+         }
+ }
+
+ @media screen and (min-width: 768px) {
+     .favorites-hero {
+         padding-bottom: 64px;
+     }
+
+     .favorites-hero-img {
+         width: 704px;
+         height: 356px;
+     }
+         .scroll-categories {
+             padding-bottom: 0px;
+             width: 818px;        
+             white-space: nowrap;
+             overflow-x: auto !important;
+         }
+     .favorites-error-icon {
+         margin-bottom: 32px;
+         width: 97px;
+         height: 83px;
+     }
+     .favorites-error-text {
+         width: 481px;
+         font-size: 16px;
+     }
+     .favorites-categories {
+         gap: 15px;
+         display: flex;         
+     }
+     .favorites-btn {
+         font-size: 16px;
+         line-height: 1.25;
+     }
+
+ }
+
+ @media screen and (min-width: 1200px) {
+     .favorites-hero-img {
+         width: 1080px;
+     }
+     .scroll-categories {
+         width: 1250px;
+         padding-bottom: 0px; 
+         white-space: nowrap;
+         overflow-x: auto;
+         }
+ }
+  .scroll-categories::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+}
+
+
+=======
 @media screen and (min-width: 1200px) {
   .favorites-hero-img {
     width: 1080px;
@@ -176,3 +298,4 @@
   white-space: nowrap;
   overflow-x: auto !important;
 }
+>>>>>>> main
