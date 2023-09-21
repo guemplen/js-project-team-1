@@ -6,7 +6,7 @@
 // !!! import{ # , RecipeDB} from './ #' треба зробити імпорт функції та класів додавання в фаворит
 import { TastyTreats_API } from './api';
 import starImage from '/src/images/sprite.svg';
-import { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 
 const apiModal = new TastyTreats_API();
 
@@ -60,7 +60,19 @@ function addContent(arr) {
   } = arr;
   // Ця функція приймає об'єкт рецепту arr і генерує рядок HTML, який відображає деталі рецепту. Вона розбирає об'єкт рецепту
   // і використовує його дані для створення HTML-структури, такі як назва, інструкції, інгредієнти тощо.
-
+  const starIcons = Array(5)
+    .fill('')
+    .map((_, index) => {
+      const starClass =
+        index < Math.floor(rating)
+          ? 'r-modal-rating-icon-fill'
+          : 'r-modal-rating-icon-empty';
+      return `
+      <svg class="${starClass}" width="18" height="18">
+        <use href="${starImage}#icon-star"></use>
+      </svg>
+    `;
+    });
   // / Оголошення двох порожніх рядків для зберігання тегів і інгредієнтів
   let newTags = '';
   tags.forEach(element => {
@@ -91,21 +103,7 @@ function addContent(arr) {
       1
     )}</div>
     <div class="r-modal-star-wrap">
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href=".${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
+        ${starIcons.join('')}
     </div>
     <div class="r-modal-time">${time} min</div></div></div>
     <div class="r-modal-ingerdients-container">${newIngredients}</div>
@@ -176,17 +174,41 @@ function selectFavoriteRecipe(recipeInfo) {
     }
   });
 }
+
 function favoriteBtnHandleFunction(e) {
   const parentWrap = e.target.parentNode;
   const siblingWrap = parentWrap.previousElementSibling;
-  recipeInfo = {
-    id: siblingWrap.querySelector('.r-modal-name').dataset.id,
-    name: siblingWrap.querySelector('.r-modal-name').textContent,
-    image: siblingWrap.querySelector('.r-modal-video').poster,
-    rating: siblingWrap.querySelector('.r-modal-rating').textContent,
-    description: siblingWrap.querySelector('.r-modal-instructions').textContent,
-  };
-  selectFavoriteRecipe(recipeInfo);
+  const recipeId = siblingWrap.querySelector('.r-modal-name').dataset.id;
+  const favoriteRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
+
+  const isFavorite = favoriteRecipes.includes(recipeId);
+
+  if (isFavorite) {
+    const updatedFavoriteRecipes = favoriteRecipes.filter(
+      id => id !== recipeId
+    );
+    localStorage.setItem('BI8886EB', JSON.stringify(updatedFavoriteRecipes));
+    favoriteBtn.textContent = 'Add to favorite';
+    Notiflix.Notify.info('Recipe removed from favorites');
+  } else {
+    favoriteRecipes.push(recipeId);
+    localStorage.setItem('BI8886EB', JSON.stringify(favoriteRecipes));
+    favoriteBtn.textContent = 'Remove from favorites';
+    Notiflix.Notify.success('Recipe added to favorites');
+  }
 }
+
+// function favoriteBtnHandleFunction(e) {
+//   const parentWrap = e.target.parentNode;
+//   const siblingWrap = parentWrap.previousElementSibling;
+//   recipeInfo = {
+//     id: siblingWrap.querySelector('.r-modal-name').dataset.id,
+//     name: siblingWrap.querySelector('.r-modal-name').textContent,
+//     image: siblingWrap.querySelector('.r-modal-video').poster,
+//     rating: siblingWrap.querySelector('.r-modal-rating').textContent,
+//     description: siblingWrap.querySelector('.r-modal-instructions').textContent,
+//   };
+//   selectFavoriteRecipe(recipeInfo);
+// }
 
 export { eventOpenrModal, eventOpenrModalTwo, toId, closeModal, openModal };

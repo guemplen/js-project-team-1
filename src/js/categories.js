@@ -29,11 +29,11 @@ refs.btnAllCategories.addEventListener('click', onbtnAllCategoriesClick);
 async function onbtnAllCategoriesClick(event) {
   const btn = await newClass.getAllCategories();
   refs.btnAllCategories.classList.add('btn-active');
-  console.log(pagination);
+  // console.log(pagination);
   pagination._options.totalItems = btn.data.perPage * btn.data.totalPages;
   pagination._options.itemsPerPage = Number(btn.data.perPage);
   // pagination = new Pagination('pagination', options);
-  renderListItem(btn.data.results)
+  renderListItem(btn.data.results);
   const buttons = document.querySelectorAll('.btn-for-filter');
   buttons.forEach(button => {
     button.classList.remove('btn-active');
