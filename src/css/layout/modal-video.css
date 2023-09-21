@@ -123,8 +123,13 @@
   display: flex;
 }
 
-.r-modal-rating-icon {
-  fill: #eea10c;
+.r-modal-rating-icon-fill {
+  fill: var(--yellow);
+  background-color: transparent;
+}
+
+.r-modal-rating-icon-empty {
+  fill: var(--black-rgba-2);
   background-color: transparent;
 }
 
