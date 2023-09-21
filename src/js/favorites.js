@@ -1,5 +1,6 @@
 import axios from 'axios';
 import spriteUrl from '../images/sprite.svg';
+import { openModal } from './modal-video';
 
 // ========================================    localStorageServsce    =============================== 
 const load = key => {
@@ -122,7 +123,7 @@ function createGalleryCards (arr) {
              </div>
              </div>
              </div>
-               <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id}>See recipe</button>
+               <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id} style='position: relative; z-index: 0'>See recipe</button>
              </div>
           </li>
             
@@ -248,3 +249,22 @@ function isRecipeLiked(recipeId) {
 
   return existingData.includes(recipeId);
 }
+
+
+// =====================================  Open Modal Video ==============================
+
+
+buttonEl.addEventListener('click', function (event) {
+
+   if (event.target.nodeName !== 'BUTTON') {
+    
+    return;
+
+  }
+
+  const btnId = event.target.dataset.reseptId;
+
+  openModal(btnId);
+
+});
+
