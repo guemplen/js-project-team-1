@@ -1,3 +1,10 @@
+.recipes-rating-items {
+  display: flex;
+  gap: 6px;
+}
+.recipes-rating-item {
+  fill: var(--stars);
+}
 .options {
   background-color: var(--white);
   margin-bottom: 18px;
@@ -145,7 +152,7 @@
 }
 
 .search-input:hover {
-  color: white !important;
+  color: var(--black)!important;
 }
 
 .search-input::placeholder {
@@ -312,12 +319,12 @@ select {
   line-height: 18px;
 }
 .recipes-rating {
-  margin-top: 16px;
+  /* margin-top: 16px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 32px 16px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 16px;
   list-style: none;
 }
 .not-active-heart {

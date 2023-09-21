@@ -18,6 +18,7 @@
   --modal-text-black: #f8f8f8;
   --green-backdrop: #9bb537;
   --hover-modal-text: #ffffff;
+  --stars: rgba(248, 248, 248, 0.1);
 }
 
 .darkmode {

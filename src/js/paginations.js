@@ -1,6 +1,4 @@
-  import 'tui-pagination/dist/tui-pagination.css';
-
-
+  //import 'tui-pagination/dist/tui-pagination.css';
 
 const windowWidth = Math.round(window.visualViewport.width);
 
