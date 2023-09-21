@@ -1,4 +1,5 @@
 import axios from 'axios';
+import spriteUrl from '../images/sprite.svg';
 
 // ========================================    localStorageServsce    =============================== 
 const load = key => {
@@ -7,6 +8,15 @@ const load = key => {
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error("Get state error: ", error.message);
+  }
+};
+
+const save = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
   }
 };
 
@@ -54,17 +64,21 @@ const onIntersectingElIntersectingViewport = async entries => {
 
 const appendCartItems = () => {
 
-  // const productsidentificators = load('BI8886EB');
-
-  const productsidentificators = ['6462a8f74c3d0ddd28897fd9','6462a8f74c3d0ddd28897fe5','6462a8f74c3d0ddd28897fdd','6462a8f74c3d0ddd28897fca','6462a8f74c3d0ddd28897fc1','6462a8f74c3d0ddd28897fbc','6462a8f74c3d0ddd28897fb9','6462a8f74c3d0ddd28897fdf']
+  const productsidentificators = load('BI8886EB');
 
   if (productsidentificators === undefined) {
   
-    divEl.classList.remove('visually-hidden')
+    divEl.classList.remove('visually-hidden');
+    allCategoriesEl.add ('is-hiden')
 
       return;
   }
-
+  if (productsidentificators.length === 0) {
+  
+    divEl.classList.remove('visually-hidden');
+    
+      return;
+  }
 
   for (const iterator of productsidentificators) {
     
@@ -84,35 +98,33 @@ function createGalleryCards (arr) {
 
   const productsToCartTemplate = arr.map(productinfo => {
 
-     let roundedNumber = parseFloat(productinfo.rating.toFixed(1));
+    let roundedNumber = parseFloat(productinfo.rating.toFixed(1));
+    
+     const isActive = isRecipeLiked(productinfo._id)
 
          return  `
           <li class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${productinfo.thumb}); background-size: cover;
               background-position: center;
               background-repeat: no-repeat">
-  <button type="button" class="recipes-list-item-like-btn">
-      <svg class="recipes-list-item-like-btn-img" width="22" height="22">
-          <use href="./images/icons.svg#heart"></use>
-      </svg>
-  </button>
-  <h3 class="subtitle">${productinfo.title}</h3>
-  <p class="recipes-list-item-text">${productinfo.description}</p>
-  <div class="recipes-rating">
-    <div class="recipes-rating-body">
-        <div class="recipes-rating-value">${roundedNumber}</div>
-        <div class="recipes-rating-active"></div>
-        <div class="recipes-rating-items">
-            <input type="radio" class="recipes-rating-item" value="1" name="rating">
-            <input type="radio" class="recipes-rating-item" value="2" name="rating">
-            <input type="radio" class="recipes-rating-item" value="3" name="rating">
-            <input type="radio" class="recipes-rating-item" value="4" name="rating">
-            <input type="radio" class="recipes-rating-item" value="5" name="rating">
-        </div>
-    </div>
-</div>
-      <button class="recipes-list-see-recipe-btn" type="button">See recipe</button>
-  </div>
-</li>
+              <button type="button" class="recipes-list-item-like-btn">
+               <svg class="recipes-list-item-like-btn-img" width="22" height="22">
+                 <use class="${isActive ? 'active-heart' : 'not-active-heart'}" href="${spriteUrl}#icon-heart" data-resept-id=${productinfo._id}></use>
+               </svg>
+              </button>
+               <h3 class="subtitle">${productinfo.title}</h3>
+               <p class="recipes-list-item-text">${productinfo.description}</p>
+               <div class="recipes-rating">
+               <div class="recipes-rating-body">
+                <div class="recipes-rating-value">${roundedNumber}</div>
+              <div class="recipes-rating-active"></div>
+              <div class="recipes-rating-items">
+          
+             </div>
+             </div>
+             </div>
+               <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id}>See recipe</button>
+             </div>
+          </li>
             
  `
   }).join('');
@@ -183,3 +195,56 @@ allCategoriesEl.addEventListener("click", allCategories);
 const timerIdcreateGalleryCards = setTimeout(createGalleryCards, 600, productsTocart);
 const timerIdchoiceСategory = setTimeout(choiceСategory, 600, productsTocart);
 
+
+
+// ===================================================   Work With LocalStoreg  ==============================================
+
+const buttonEl = document.querySelector(".recipes-list");
+
+const deletLocalSnoregId = event => {
+ 
+  if (event.target.nodeName !== 'use') {
+    return;
+  }
+  
+  const localStorageData = localStorage.getItem("BI8886EB");
+
+  const buttonIds = localStorageData ? JSON.parse(localStorageData) : [];
+  
+  
+  const buttonId = event.target.dataset.reseptId; 
+
+  const buttonIndex = buttonIds.indexOf(buttonId);
+ 
+  if (buttonIndex === -1) {
+
+    event.target.classList.remove('not-active-heart');
+
+    event.target.classList.add('active-heart');
+
+    buttonIds.push(buttonId);
+
+  } else {
+    
+    event.target.classList.remove('active-heart');
+
+    event.target.classList.add('not-active-heart');
+
+    buttonIds.splice(buttonIndex, 1);
+  }
+
+  save("BI8886EB", buttonIds);
+
+}
+
+buttonEl.addEventListener("click", deletLocalSnoregId);
+
+
+function isRecipeLiked(recipeId) {
+
+  const storedData = localStorage.getItem('BI8886EB');
+
+  const existingData = storedData ? JSON.parse(storedData) : [];
+
+  return existingData.includes(recipeId);
+}

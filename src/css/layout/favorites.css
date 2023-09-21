@@ -1,72 +1,72 @@
- .visually-hidden {
-     position: absolute;
-     width: 1px;
-     height: 1px;
-     margin: -1px;
-     border: 0;
-     padding: 0;
-     white-space: nowrap;
-     clip-path: inset(100%);
-     clip: rect(0 0 0 0);
-     overflow: hidden;
- }
- .is-hiden{
-    display: none;
- }
- .container-fav {
-     width: 100%;
-     margin: 0 auto;
-     padding: 0 20px;
- }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.is-hiden {
+  display: none;
+}
 
- @media screen and (min-width: 375px) {
-    .container-fav {
-         max-width: 375px;
-     }
- }
+.active-heart {
+  fill: var(--white);
+}
 
- @media screen and (min-width: 768px) {
-    .container-fav {
-         max-width: 768px;
-         padding: 0 32px;
-     }
- }
+.not-active-heart {
+  fill: #0000;
+}
 
- @media screen and (min-width: 1200px) {
-    .container-fav {
-         max-width: 1121px;
-         padding: 0 20px;
-     }
- }
- .favorites-hero {
-     display: flex;
-     justify-content: center;
-     padding-bottom: 35px;
-     padding-top: 40px;
- }
+.container-fav {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
- .favorites-hero-img {
-     width: 310px;
-     height: 516px;
- }
+@media screen and (min-width: 375px) {
+  .container-fav {
+    max-width: 375px;
+  }
+}
 
- .favorites-error {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     position: relative;
- }
+@media screen and (min-width: 768px) {
+  .container-fav {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
 
- .favorites-error-js {
-     margin-top: 260px;
- }
+@media screen and (min-width: 1200px) {
+  .container-fav {
+    max-width: 1121px;
+    padding: 0 20px;
+  }
+}
+.favorites-hero {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35px;
+  padding-top: 40px;
+}
 
- .favorites-error-icon {
-     margin: auto;
+.favorites-hero-img {
+  width: 310px;
+  height: 516px;
+}
 
-     margin-bottom: 24px;
- }
+.favorites-error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
 
+<<<<<<< HEAD
  .favorites-error-text {
      margin: auto;
      text-align: center;
@@ -88,8 +88,106 @@
     display: flex;
     gap: 12px;
  }
+=======
+.favorites-error-js {
+  margin-top: 260px;
+}
 
+.favorites-error-icon {
+  margin: auto;
 
+  margin-bottom: 24px;
+}
+
+.favorites-error-text {
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.favorites-categories {
+  display: flex;
+  white-space: nowrap;
+  margin-left: 0px;
+  gap: 12px;
+}
+.js-div-button {
+  display: flex;
+  gap: 12px;
+}
+
+.favorites-btn {
+  /* display: inline-block; */
+  margin-top: 1px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: var(--black-rgba-3);
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+  padding: 14px 18px;
+  background-color: var(--white);
+  border: 1px solid var(--black-rgba-2);
+  outline: none;
+  cursor: pointer;
+
+  transition: color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func);
+}
+
+.favorites-btn:is(:hover, :focus) {
+  background-color: var(--green);
+  color: var(--white);
+  border-color: var(--green);
+}
+
+@media screen and (min-width: 375px) {
+  .favorites-hero {
+    padding-bottom: 40px;
+  }
+
+  .favorites-hero-img {
+    width: 335px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .favorites-hero {
+    padding-bottom: 64px;
+  }
+
+  .favorites-hero-img {
+    width: 704px;
+    height: 356px;
+  }
+
+  .favorites-error-icon {
+    margin-bottom: 32px;
+    width: 97px;
+    height: 83px;
+  }
+
+  .favorites-error-text {
+    width: 481px;
+    font-size: 16px;
+  }
+
+  .favorites-categories {
+    gap: 15px;
+    display: flex;
+  }
+>>>>>>> main
+
+  .favorites-btn {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+<<<<<<< HEAD
  .favorites-btn {
     display: inline-block;
     margin-top: 1px;
@@ -186,3 +284,18 @@
 }
 
 
+=======
+@media screen and (min-width: 1200px) {
+  .favorites-hero-img {
+    width: 1080px;
+  }
+}
+
+.scroll-categories {
+  padding-bottom: 8px;
+  width: 500px;
+  height: 60px;
+  white-space: nowrap;
+  overflow-x: auto !important;
+}
+>>>>>>> main
