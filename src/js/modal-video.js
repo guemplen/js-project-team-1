@@ -57,7 +57,7 @@ function addContent(arr) {
           : 'r-modal-rating-icon-empty';
       return `
       <svg class="${starClass}" width="18" height="18">
-        <use href="${starImage}#icon-star"></use>
+        <use href="${starImage}#star-ico"></use>
       </svg>
     `;
     });
