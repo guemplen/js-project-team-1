@@ -10,6 +10,7 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 .is-hiden {
   display: none;
 }
@@ -51,6 +52,7 @@
     padding: 0 20px;
   }
 }
+
 .favorites-hero {
   display: flex;
   justify-content: center;
@@ -61,6 +63,8 @@
 .favorites-hero-img {
   width: 310px;
   height: 516px;
+  border-radius: 0px;
+  color: var(--black-05);
 }
 
 .favorites-error {
@@ -93,6 +97,7 @@
   margin-left: 0px;
   gap: 12px;
 }
+
 .js-div-button {
   display: flex;
   gap: 12px;
@@ -133,6 +138,13 @@
   .favorites-hero-img {
     width: 335px;
   }
+
+  .scroll-categories {
+    padding-bottom: 0px;
+    width: 425px;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -143,6 +155,13 @@
   .favorites-hero-img {
     width: 704px;
     height: 356px;
+  }
+
+  .scroll-categories {
+    padding-bottom: 0px;
+    width: 818px;
+    white-space: nowrap;
+    overflow-x: auto !important;
   }
 
   .favorites-error-icon {
@@ -171,12 +190,16 @@
   .favorites-hero-img {
     width: 1080px;
   }
+
+  .scroll-categories {
+    width: 1250px;
+    padding-bottom: 0px;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
 }
 
-.scroll-categories {
-  padding-bottom: 8px;
-  width: 500px;
-  height: 60px;
-  white-space: nowrap;
-  overflow-x: auto !important;
+.scroll-categories::-webkit-scrollbar {
+  width: 3px;
+  background-color: #F5F5F5, var(--black-05);
 }
