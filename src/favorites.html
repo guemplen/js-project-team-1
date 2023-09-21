@@ -1,102 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./images/favicon.ico" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Favorits</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="stylesheet" href="./css/layout/favorites.css" />
-  </head>
 
-  <body>
-    <header>
-      <!--Тут буде код header  -->
-      <include src="./partials/header.html"></include>
-    </header>
-    <main>
-      <!--favorites.html-->
-      <section>
-        <div class="favorites-hero container-fav">
-          <picture class="favorites-hero-img">
-            <source
-              srcset="
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.ico" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/layout/favorites.css" />
+</head>
+
+<body>
+  <header>
+    <!--Тут буде код header  -->
+    <include src="./partials/header.html"></include>
+  </header>
+  <main>
+    <!--favorites.html-->
+    <section>
+      <div class="favorites-hero container-fav">
+        <picture class="favorites-hero-img">
+          <source srcset="
                 ./images/favorites/desktop-favorites-1x.jpg 1x,
                 ./images/favorites/desktop-favorites-2x.jpg 2x
-              "
-              media="(min-width:1200px)"
-            />
-            <source
-              srcset="
+              " media="(min-width:1200px)" />
+          <source srcset="
                 ./images/favorites/tablet-favorites-1x.jpg 1x,
                 ./images/favorites/tablet-favorites-2x.jpg 2x
-              "
-              media="(min-width:768px)"
-            />
-            <source
-              srcset="
+              " media="(min-width:768px)" />
+          <source srcset="
                 ./images/favorites/mobile-favorites-1x.jpg 1x,
                 ./images/favorites/mobile-favorites-2x.jpg 2x
-              "
-              media="(min-width:375px)"
-            />
-            <source
-              srcset="
+              " media="(min-width:375px)" />
+          <source srcset="
                 ./images/favorites/mobile-favorites-1x.jpg 1x,
                 ./images/favorites/mobile-favorites-2x.jpg 2x
-              "
-              media="(max-width:374px)"
-            />
-            <img
-              class="favorites-hero-img"
-              src="./images/favorites/mobile-favorites-1x.jpg"
-              alt="card-favorites"
-            />
-          </picture>
+              " media="(max-width:374px)" />
+          <img class="favorites-hero-img" src="./images/favorites/mobile-favorites-1x.jpg" alt="card-favorites" />
+        </picture>
+      </div>
+    </section>
+    <section>
+      <div class="favorites container-fav">
+        <h2 class="visually-hidden">Favorites</h2>
+
+        <div class="favorites-error visually-hidden">
+          <svg class="favorites-error-icon" width="68" height="58">
+            <use href="./images/sprite.svg#icon-chefs-hat"></use>
+          </svg>
+          <p class="favorites-error-text">
+            It appears that you haven't added any recipes to your favorites
+            yet. To get started, you can add recipes that you like to your
+            favorites for easier access in the future.
+          </p>
         </div>
-      </section>
-      <section>
-        <div class="favorites container-fav">
-          <h2 class="visually-hidden">Favorites</h2>
 
-          <div class="favorites-error visually-hidden">
-            <svg class="favorites-error-icon" width="68" height="58">
-              <use href="./images/sprite.svg#icon-chefs-hat"></use>
-            </svg>
-            <p class="favorites-error-text">
-              It appears that you haven't added any recipes to your favorites
-              yet. To get started, you can add recipes that you like to your
-              favorites for easier access in the future.
-            </p>
-          </div>
-
-          <div class="favorites-categories scroll-categories">
-            <button
-              class="js-all-categories is-hiden favorites-btn all-categories"
-            >
-              All categories
-            </button>
-            <div class="js-div-button"></div>
-          </div>
-
-          <div class="favorites-list container-favorites">
-            <ul class="recipes-list"></ul>
-          </div>
-
-          <div id="pagination" class="tui-pagination visually-hidden"></div>
+        <div class="favorites-categories scroll-categories">
+          <button class="js-all-categories is-hiden favorites-btn all-categories">
+            All categories
+          </button>
+          <div class="js-div-button"></div>
         </div>
-      </section>
 
-      <load src="./partials/modal-order.html" />
-    </main>
-    <script type="module" src="./js/favorites.js"></script>
-    <script type="module" src="./js/switcher.js"></script>
-  </body>
+        <div class="favorites-list container-favorites">
+          <ul class="recipes-list"></ul>
+        </div>
+
+        <!--<div id="pagination" class="tui-pagination visually-hidden"></div> -->
+      </div>
+    </section>
+
+    <load src="./partials/modal-order.html" />
+  </main>
+  <script type="module" src="./js/favorites.js"></script>
+  <script type="module" src="./js/switcher.js"></script>
+</body>
+
 </html>
