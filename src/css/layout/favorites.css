@@ -74,18 +74,16 @@
 
 .favorites-error-icon {
   margin: auto;
+
   margin-bottom: 24px;
 }
-/* error*/
- .favorites-error-text {
-     margin: auto;
-     text-align: center;
-     font-size: 14px;
-     font-weight: 400;
-     color: var(--black-05);
 
- }
-
+.favorites-error-text {
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
 
 .favorites-categories {
   display: flex;
@@ -174,7 +172,7 @@
          line-height: 1.25;
      }
 
- }
+ 
 
  @media screen and (min-width: 1200px) {
      .favorites-hero-img {
@@ -187,9 +185,8 @@
          overflow-x: auto;
          }
  }
+}
   .scroll-categories::-webkit-scrollbar {
     width: 3px;
     background-color: #F5F5F5,var(--black-05);
-    
-}
-
+  }
