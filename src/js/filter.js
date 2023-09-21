@@ -177,33 +177,11 @@ export function onPageChange(page) {
   });
 }
 
-// const ratingItems = document.querySelectorAll('.recipes-rating-items');
-// function starsFilling() {
-//   ratingItems.forEach(item => {
-//     const ratings = parseFloat(
-//       item.parentElement.querySelector('.recipes-rating-value').textContent
-//     );
-//     const stars = item.querySelectorAll('.recipes-rating-item');
-
-//     stars.forEach((star, index) => {
-//       if (ratings === 1) {
-//         star
-//           .querySelector('svg use')
-//           .setAttribute('href', `${heartImage}#star-ico-filled`);
-//       } else {
-//         star
-//           .querySelector('svg use')
-//           .setAttribute('href', `${heartImage}#star-ico`);
-//       }
-//     });
-//   });
-// }
-
 export function renderListItem(data) {
   const markup = data
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
-      const rating = parseInt(recipe.rating);
+      const rating = Number.parseInt(recipe.rating);
       const isActive = isRecipeLiked(recipe._id); // Перевіряємо, чи рецепт сподобався користувачеві
 
       return `
@@ -235,31 +213,7 @@ export function renderListItem(data) {
                             <div class="recipes-rating-body">
                               <div class="recipes-rating-active"></div>
                               <div class="recipes-rating-items">
-                                  <div class="recipes-rating-item" data-value="1">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
-                                          <use href="${heartImage}#star-ico"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="2">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
-                                          <use href="${heartImage}#star-ico"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="3">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
-                                          <use href="${heartImage}#star-ico"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="4">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
-                                          <use href="${heartImage}#star-ico"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="5">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
-                                          <use href="${heartImage}#star-ico"></use>
-                                      </svg>
-                                  </div>
+                                  ${starsTemplate(rating)}
                               </div>
                           </div>
                         </div>
@@ -274,128 +228,21 @@ export function renderListItem(data) {
     .join('');
   recipesListEl.innerHTML = markup;
 }
-//*
-function getData() {
-  tastyTreatsAPI.filterRecipes().then(response => {
-    starsFilling(response.data.results);
-  });
-}
-getData();
 
-function starsFilling(data) {
-  const starsEls = {};
-
-  // Выбираем все элементы с атрибутом data-value от 1 до 5 и сохраняем их в объект starsEls
+function starsTemplate(rating) {
+  const stars = [];
   for (let i = 1; i <= 5; i++) {
-    starsEls[i] = document.querySelectorAll(`[data-value="${i}"]`);
+    const star = `<div class="recipes-rating-item" data-value="${i}" style="${
+      i <= rating ? 'fill: var(--yellow)' : ''
+    }"><svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
+          <use href="${heartImage}#star-ico"></use>
+        </svg>
+    </div>`;
+    stars.push(star);
   }
-
-  data.forEach(recipe => {
-    const rating = parseInt(recipe.rating);
-    if (rating >= 1 && rating <= 5) {
-      for (let i = 1; i <= rating; i++) {
-        // Меняем цвет звезд на белый (#fff)
-        starsEls[i].forEach(el => {
-          el.style.fill = '#fff';
-        });
-      }
-    }
-  });
+  return stars.join('');
 }
-starsFilling();
-//*
 
-// function starsFilling(data) {
-//   const starsEl = document.querySelectorAll('[data-value="1"]');
-//   console.log(data);
-// const result = data.map(recipe => {
-//   const rating = parseInt(recipe.rating);
-//   if (rating === 4) {
-//     starsEl.forEach(star => {
-//       star.style.fill = '#fff';
-//     });
-//   }
-// });
-// return result;
-// }
-// function starsFilling(data) {
-//   const starsElOne = document.querySelectorAll('[data-value="1"]');
-//   const starsElTwo = document.querySelectorAll('[data-value="2"]');
-//   const starsElThree = document.querySelectorAll('[data-value="3"]');
-//   const starsElFour = document.querySelectorAll('[data-value="4"]');
-//   const starsElFive = document.querySelectorAll('[data-value="5"]');
-//   const star = data.map(recipe => {
-//     const rating = parseInt(recipe.rating);
-//     if (rating === 1) {
-//       starsElOne.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//     } else if (rating === 2) {
-//       starsElTwo.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElOne.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//     } else if (rating === 3) {
-//       starsElTwo.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElOne.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElThree.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//     } else if (rating === 3) {
-//       starsElTwo.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElOne.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElThree.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElFour.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//     } else if (rating === 3) {
-//       starsElTwo.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElOne.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElThree.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElFour.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//       starsElFive.forEach(el => {
-//         el.style.fill = '#fff';
-//       });
-//     }
-//   });
-// }
-//*
-// const starIcons = Array(5)
-//   .fill('')
-//   .map((_, index) => {
-//     const starClass =
-//       index < Math.floor(rating)
-//         ? 'r-modal-rating-icon-fill'
-//         : 'r-modal-rating-icon-empty';
-//     return `
-//       <svg class="${starClass}" width="18" height="18">
-//         <use href="${starImage}#icon-star"></use>
-//       </svg>
-//     `;
-//   });
-//*
-
-//*
 function isRecipeLiked(recipeId) {
   const storedData = localStorage.getItem('BI8886EB');
   const existingData = storedData ? JSON.parse(storedData) : [];
