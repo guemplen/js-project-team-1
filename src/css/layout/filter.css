@@ -145,7 +145,7 @@
 }
 
 .search-input:hover {
-  color: white !important;
+  color: var(--black)!important;
 }
 
 .search-input::placeholder {
