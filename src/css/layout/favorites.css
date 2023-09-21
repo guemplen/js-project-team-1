@@ -72,14 +72,18 @@
      text-align: center;
      font-size: 14px;
      font-weight: 400;
+     color: var(--black-05);
+
  }
 
- .favorites-categories {
+
+  .favorites-categories {
     display: flex;
     white-space: nowrap;
     margin-left: 0px;
     gap: 12px;
- }
+    overflow-x: hidden;
+ }  
  .js-div-button{
     display: flex;
     gap: 12px;
@@ -122,6 +126,12 @@
      .favorites-hero-img {
          width: 335px;
      }
+         .scroll-categories {
+             padding-bottom: 0px;
+             width: 425px;
+             white-space: nowrap;
+             overflow-x: auto;
+         }
  }
 
  @media screen and (min-width: 768px) {
@@ -133,24 +143,25 @@
          width: 704px;
          height: 356px;
      }
-
+         .scroll-categories {
+             padding-bottom: 0px;
+             width: 818px;        
+             white-space: nowrap;
+             overflow-x: auto !important;
+         }
      .favorites-error-icon {
          margin-bottom: 32px;
          width: 97px;
          height: 83px;
      }
-
      .favorites-error-text {
          width: 481px;
          font-size: 16px;
      }
-
      .favorites-categories {
          gap: 15px;
-         display: flex;
-         
+         display: flex;         
      }
-
      .favorites-btn {
          font-size: 16px;
          line-height: 1.25;
@@ -162,14 +173,16 @@
      .favorites-hero-img {
          width: 1080px;
      }
+     .scroll-categories {
+         width: 1250px;
+         padding-bottom: 0px; 
+         white-space: nowrap;
+         overflow-x: auto;
+         }
  }
+  .scroll-categories::-webkit-scrollbar {
+    width: 3px;
+    background-color: #F5F5F5;
+}
 
-
- .scroll-categories{
-    padding-bottom: 8px;
-    width: 500px;
-     height: 60px;
-     white-space: nowrap; 
-     overflow-x: auto !important; 
- }
 
