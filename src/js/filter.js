@@ -2,6 +2,7 @@ import axios from 'axios';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
+import { pagination } from './categories';
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
 const selectElCountry = document.querySelector('.select-country');
@@ -24,6 +25,10 @@ if (window.innerWidth < 768) {
 } else {
   tastyTreatsAPI = new TastyTreatsAPI(9);
 }
+
+pagination.on('afterMove', (eventData) => {
+  onPageChange(eventData.page);
+});
 
 function renderOptionsTime() {
   const data = [];
@@ -143,6 +148,21 @@ function onSideBarClick(event) {
     return;
   }
   tastyTreatsAPI.category = event.target.value;
+
+  tastyTreatsAPI.filterRecipes().then(response => {
+    if (response.data.results.length === 0) {
+      setTimeout(() => {
+        Notiflix.Notify.failure(
+          'Sorry, no such recipe found. Please try again.'
+        );
+      }, 500);
+    }
+    renderListItem(response.data.results);
+  });
+}
+
+export function onPageChange(page) {
+  tastyTreatsAPI.page = page;
 
   tastyTreatsAPI.filterRecipes().then(response => {
     if (response.data.results.length === 0) {
