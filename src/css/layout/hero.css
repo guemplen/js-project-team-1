@@ -129,7 +129,7 @@
     border-radius: 15px;
     width: 100%;
     object-fit: cover;
-    background-color: var(--black-05);
+    background-color: var(--black-rgba-still);
   }
 
 
