@@ -73,11 +73,11 @@
 }
 
 .btn-for-filter:hover {
-  color: var(--green);
+  background-color: var(--green);
 }
-.btn-active {
+/* .btn-active {
   color: var(--green);
-}
+} */
 /* ==============================================FORM FILTER */
 .filter-form {
   margin-top: 40px;
@@ -98,7 +98,6 @@
 .select-time:focus {
   color: var(--black);
 }
-
 
 .select-time {
   width: 161px;
@@ -133,7 +132,7 @@
   background-color: var(--grey-inputs);
 }
 .select-country:focus {
-  color: var(--black);;
+  color: var(--black);
 }
 .search-input {
   width: 335px;
@@ -146,9 +145,8 @@
 }
 
 .search-input:hover {
-color: white!important;
+  color: white !important;
 }
-
 
 .search-input::placeholder {
   color: var(--black-rgba);
@@ -326,7 +324,7 @@ select {
   fill: transparent;
 }
 .active-heart {
-  fill: var(--white);
+  fill: var(--grey);
 }
 /*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {
