@@ -4,37 +4,44 @@
 // !!! import { renderIcons } from './ #'; треба вказати імпорт функції з модуля rating.js
 
 // !!! import{ # , RecipeDB} from './ #' треба зробити імпорт функції та класів додавання в фаворит
+import { TastyTreats_API } from './api';
+import starImage from '/src/images/sprite.svg';
 import { Notify } from 'notiflix';
+
+const apiModal = new TastyTreats_API();
+
 const body = document.querySelector('body');
 const modalWindow = document.querySelector('.r-modal-content');
 const seeModal = document.querySelector('.r-modal-backdrop');
 const ratingBtn = document.querySelector('.r-modal-rating-btn');
 const closeBtn = document.querySelector('.r-modal-close-btn');
 const favoriteBtn = document.querySelector('.r-modal-favorite-btn');
-// const recipeDB = new TastyTreats_API(); // Створення нового екземпляра класу RecipeDB
+// const recipeDB = new #(); // Створення нового екземпляра класу RecipeDB
 let toId = ''; // Ініціалізація змінної toId
 
 // Ця функція встановлює обробник подій для елементу DOM з класом 'фильтру галереї',
 // який викликає функцію openModal при кліку на цей елемент.
-function eventOpenrModal() {
-  const getIdElelment = document.querySelector('.#'); // !!!
-  getIdElelment.addEventListener('click', openModal);
-}
+// function eventOpenrModal() {
+//   const getIdElelment = document.querySelector('#'); // !!!
+//   getIdElelment.addEventListener('click', openModal);
+// }
 
-function eventOpenrModalTwo() {
-  const getIdElelmentTwo = document.querySelector('.#'); // !!! // https://prnt.sc/9aWEweNfRDan popular recipes
-  getIdElelmentTwo.addEventListener('click', openModal);
-}
+// function eventOpenrModalTwo() {
+//   const getIdElelmentTwo = document.querySelector(''#''); // !!! // https://prnt.sc/9aWEweNfRDan popular recipes
+//   getIdElelmentTwo.addEventListener('click', openModal);
+// }
 
 // Ця функція використовує функцію getRecipeDetails для завантаження даних рецепту на основі змінної toId.
 // Після отримання даних вона вставляє вміст в модальне вікно за допомогою функції addContent.
 // Якщо сталася помилка, вона логує її.
 function loadContent() {
-  return getRecipeDetails(toId)
+  const byId = apiModal
+    .getRecipesById(toId)
     .then(data =>
       modalWindow.insertAdjacentHTML('afterbegin', addContent(data))
     )
     .catch(err => console.log(err));
+  // console.log(byId);
 }
 
 // Ця частина коду визначає функцію addContent, яка генерує HTML-структуру для відображення деталей рецепту на сторінці.
@@ -85,19 +92,19 @@ function addContent(arr) {
     )}</div>
     <div class="r-modal-star-wrap">
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href=".${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
         <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="../images/sprite.svg#icon-star"></use>
+            <use href="${starImage}#icon-star"></use>
         </svg>
     </div>
     <div class="r-modal-time">${time} min</div></div></div>
@@ -108,13 +115,13 @@ function addContent(arr) {
 
 // Ця функція відповідає за відкриття модального вікна при кліку на певний елемент на сторінці. Вона виконує такі
 //  дії, як завантаження контенту, показ вікна, блокування прокрутки та додавання обробників подій для закриття вікна.
-function openModal(event) {
+function openModal(recipeId) {
   // Перевірка, чи був клік на елементі з ідентифікатором
-  if (!event.target.id) {
+  if (!recipeId) {
     return; // Якщо клік не був на елементі з ідентифікатором, функція завершується
   }
 
-  toId = event.target.id; // Збереження ідентифікатора, на якому був клік
+  toId = recipeId; // Збереження ідентифікатора, на якому був клік
   loadContent(); // Завантаження вмісту модального вікна
   seeModal.classList.remove('visually-hidden'); // Показ модального вікна, видалення класу visually-hidden,
   // який ховає вікно
@@ -140,7 +147,7 @@ function closeModal(event) {
   // ratingBtn.removeEventListener('click', closeOnTarget);
   closeBtn.removeEventListener('click', closeOnTarget);
   favoriteBtn.removeEventListener('click', closeOnTarget);
-  addFavouriteOnList();
+  // addFavouriteOnList();
 }
 
 function closeOnTarget(event) {
@@ -182,4 +189,4 @@ function favoriteBtnHandleFunction(e) {
   selectFavoriteRecipe(recipeInfo);
 }
 
-export { eventOpenrModal, eventOpenrModalTwo, toId, closeModal };
+export { eventOpenrModal, eventOpenrModalTwo, toId, closeModal, openModal };

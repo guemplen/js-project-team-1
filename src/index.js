@@ -9,3 +9,4 @@ import './js/modal-rating';
 import './js/modal-order';
 import './js/categories';
 import './js/paginations';
+import './js/like-button';
