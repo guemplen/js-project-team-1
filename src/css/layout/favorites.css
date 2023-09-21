@@ -22,6 +22,10 @@
   fill: #0000;
 }
 
+.recipes-list-see-recipe-btn {
+  z-index: 1000;
+}
+
 .container-fav {
   width: 100%;
   margin: 0 auto;
