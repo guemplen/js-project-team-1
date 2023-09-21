@@ -27,7 +27,7 @@ if (window.innerWidth < 768) {
   tastyTreatsAPI = new TastyTreatsAPI(9);
 }
 
-pagination.on('afterMove', (eventData) => {
+pagination.on('afterMove', eventData => {
   onPageChange(eventData.page);
 });
 
@@ -181,7 +181,9 @@ export function renderListItem(data) {
   const markup = data
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
+      const rating = Number.parseInt(recipe.rating);
       const isActive = isRecipeLiked(recipe._id); // Перевіряємо, чи рецепт сподобався користувачеві
+
       return `
               <li  class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${
                 recipe.preview
@@ -211,43 +213,36 @@ export function renderListItem(data) {
                             <div class="recipes-rating-body">
                               <div class="recipes-rating-active"></div>
                               <div class="recipes-rating-items">
-                                  <div class="recipes-rating-item" data-value="1">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="2">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="3">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="4">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="5">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
+                                  ${starsTemplate(rating)}
                               </div>
                           </div>
                         </div>
-                        <button class="recipes-list-see-recipe-btn" type="button" data-id="${recipe._id}">See recipe</button>
+                        <button class="recipes-list-see-recipe-btn" type="button" data-id="${
+                          recipe._id
+                        }">See recipe</button>
                     </div>
               </li>
     `;
     })
-    .join('');
 
+    .join('');
   recipesListEl.innerHTML = markup;
 }
+
+function starsTemplate(rating) {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    const star = `<div class="recipes-rating-item" data-value="${i}" style="${
+      i <= rating ? 'fill: var(--yellow)' : ''
+    }"><svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
+          <use href="${heartImage}#star-ico"></use>
+        </svg>
+    </div>`;
+    stars.push(star);
+  }
+  return stars.join('');
+}
+
 function isRecipeLiked(recipeId) {
   const storedData = localStorage.getItem('BI8886EB');
   const existingData = storedData ? JSON.parse(storedData) : [];
