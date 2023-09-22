@@ -318,7 +318,7 @@ select {
 }
 
 .subtitle {
-  margin-top: 198px;
+  margin-top: 202px;
   margin-bottom: 8px;
   color: var(--grey);
   font-family: Inter;
@@ -390,7 +390,7 @@ select {
     margin: 0;
   }
   .subtitle {
-    margin-top: 143px;
+    margin-top: 135px;
   }
   .wrapper-for-time-and-area {
     display: block;
@@ -425,6 +425,9 @@ select {
 }
 
 @media screen and (min-width: 1280px) {
+  .subtitle {
+    margin-top: 155px;
+  }
   .recipes-sidebar-search-list {
     width: 235px;
     height: 416px;
