@@ -11,14 +11,6 @@
   overflow: hidden;
 }
 
-.list {
-  list-style-type: none;
-}
-
-.link {
-  text-decoration: none;
-}
-
 .is-hiden {
   display: none;
 }
@@ -31,8 +23,8 @@
   fill: #0000;
 }
 
-.recipes-rating-body {
-  display: flex;
+.recipes-list-see-recipe-btn {
+  z-index: 1000;
 }
 
 .container-fav {
@@ -53,7 +45,6 @@
   align-items: center;
   gap: 17px;
 }
-
 .recipes-list-wraper .recipes-list-see-recipe-btn {
   display: flex;
   padding: 8px 14px;
@@ -70,7 +61,6 @@
   font-weight: 500;
   line-height: normal;
 }
-
 @media screen and (min-width: 375px) {
   .container-fav {
     max-width: 375px;
@@ -82,7 +72,6 @@
     max-width: 768px;
     padding: 0 32px;
   }
-
     .favorites-list {
       gap: 16px;
       margin-bottom: 64px;
@@ -99,22 +88,6 @@
     max-width: 1080px;
     padding: 0;
   }
-  /* .recipes-list-see-recipe-btn {
-    border-radius: 8px;
-
-    padding: 8px 16px;
-
-    gap: 10px;
-
-    bottom: 29px;
-
-    color: #f8f8f8;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  } */
 }
 
 .favorites-hero {
