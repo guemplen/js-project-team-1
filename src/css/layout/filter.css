@@ -114,6 +114,13 @@ align-items: baseline;
   background-color: var(--green);
 }
 
+/* .btn-active-side{
+  border: none;
+  color: var(--green);
+}  */
+
+
+
 /* ==============================================FORM FILTER */
 .filter-form {
   margin-top: 40px;

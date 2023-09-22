@@ -4,6 +4,8 @@ import Notiflix from 'notiflix';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
 import { pagination } from './categories';
 import heartImage from '/src/images/sprite.svg';
+import { onbtnAllCategoriesClick } from "/src/js/categories.js";
+
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
 const selectElCountry = document.querySelector('.select-country');
@@ -260,6 +262,7 @@ resetFilterBtn.addEventListener('click', event => {
   if (event.target.nodeName === 'DIV') {
     return;
   } else {
+    onbtnAllCategoriesClick();
     //ПОВЕРТАЄ КОЛІР  СЕЛЕКТОРУ ДО ДЕФОЛТУ//
     formEl.reset();
     // iconSearchEl.style.fill = 'var(----black-rgba)';

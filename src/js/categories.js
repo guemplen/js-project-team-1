@@ -26,7 +26,7 @@ if (window.innerWidth < 768) {
 export const pagination = new Pagination('pagination', options);
 ///Вішаємо подію на кнопку "Всі категорії"
 refs.btnAllCategories.addEventListener('click', onbtnAllCategoriesClick);
-async function onbtnAllCategoriesClick(event) {
+export async function onbtnAllCategoriesClick(event) {
   const btn = await newClass.getAllCategories();
   refs.btnAllCategories.classList.add('btn-active');
   // console.log(pagination);
@@ -68,13 +68,13 @@ async function onBtnForFilterClick(event) {
   buttons.forEach(button => {
     button.classList.remove('btn-active');
   });
-  event.target.classList.add('btn-active');
+  event.target.classList.add('btn-active-side');
 }
 function onResetFilter(event) {
   refs.btnAllCategories.classList.add('btn-active');
   const buttons = document.querySelectorAll('.btn-for-filter');
   buttons.forEach(button => {
-    button.classList.remove('btn-active');
+    button.classList.remove('btn-active-side');
   });
 }
 
