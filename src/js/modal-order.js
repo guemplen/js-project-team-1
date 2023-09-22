@@ -3,6 +3,7 @@ import axios from 'axios';
 const closeOrderButton = document.querySelector('.js-cross-order');
 const orderNowModal = document.querySelector('.order-now-div');
 // console.log(orderNowModal);
+
 closeOrderButton.addEventListener('click', () => {
   orderNowModal.style.display = 'none';
 });
@@ -14,6 +15,10 @@ openOrderNow.addEventListener('click', () => {
 const cartModal = document.querySelector('.js-cart');
 cartModal.addEventListener('click', () => {
   orderNowModal.style.display = 'block';
+});
+
+orderNowModal.addEventListener('click', () => {
+  orderNowModal.style.display = 'none';
 });
 
 //*Submit

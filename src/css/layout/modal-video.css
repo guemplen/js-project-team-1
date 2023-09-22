@@ -123,8 +123,13 @@
   display: flex;
 }
 
-.r-modal-rating-icon {
-  fill: #eea10c;
+.r-modal-rating-icon-fill {
+  fill: var(--yellow);
+  background-color: transparent;
+}
+
+.r-modal-rating-icon-empty {
+  fill: var(--black-rgba-2);
   background-color: transparent;
 }
 
@@ -183,51 +188,47 @@
 }
 
 .r-modal-favorite-btn {
-  width: 148px;
-  height: 41px;
+  display: flex;
+  align-items: center;
+  width: 156px;
+  height: 45px;
   padding: 12px 24px;
   background: #9bb537;
   border-radius: 15px;
 
-  font-family: 'Inter';
-  font-style: normal;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #f8f8f8;
+  color: var(--grey);
 
-  cursor: pointer;
-  font-family: inherit;
+
   border: none;
 }
 
 .r-modal-rating-btn {
-  min-width: 133px;
-  height: 41px;
+  width: 156px;
+  height: 45px;
   padding: 12px 24px;
   background: transparent;
   border: 1px solid #9bb537;
   border-radius: 15px;
-
-  font-family: 'Inter';
-  font-style: normal;
+ 
   font-weight: 500;
   font-size: 14px;
   color: var(--black-05);
 
-  cursor: pointer;
-  font-family: inherit;
 }
 
 .r-modal-favorite-btn:hover,
 .r-modal-favorite-btn:focus {
-  color: rgba(5, 5, 5, 1);
+  color: var(--black);
 }
 
 .r-modal-rating-btn:hover,
 .r-modal-rating-btn:focus {
   background: rgba(155, 181, 55, 1);
-  color: rgba(248, 248, 248, 1);
+  color: var(--grey);
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 

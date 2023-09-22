@@ -1,3 +1,10 @@
+.recipes-rating-items {
+  display: flex;
+  gap: 6px;
+}
+.recipes-rating-item {
+  fill: var(--stars);
+}
 .options {
   background-color: var(--white);
   margin-bottom: 18px;
@@ -10,6 +17,12 @@
   background-color: var(--black-rgba-2);
   border-radius: 12px;
   width: 10px;
+}
+
+.btn-all-categories:active {
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
 }
 
 .btn-all-categories {
@@ -29,7 +42,8 @@
 }
 .btn-all-categories:hover,
 .btn-all-categories:focus {
-  color: rgba(248, 248, 248, 1);
+  border: none;
+  color: var(--white);
   background: var(--green);
 }
 .recipes-sidebar-search-list {
@@ -72,12 +86,39 @@
   transition: var(--transition-dur-and-func);
 }
 
-.btn-for-filter:hover {
+.btn-for-filter:hover,
+.btn-for-filter:focus {
+  color: var(--green);
+  background-color: transparent !important;
+}
+
+.recipes-list-see-recipe-btn {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--green);
+  color: var(--modal-text-black);
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.btn-active {
+  border: none;
+  color: var(--white);
   background-color: var(--green);
 }
-/* .btn-active {
+
+/* .btn-active-side{
+  border: none;
   color: var(--green);
-} */
+}  */
+
 /* ==============================================FORM FILTER */
 .filter-form {
   margin-top: 40px;
@@ -145,7 +186,7 @@
 }
 
 .search-input:hover {
-  color: white !important;
+  color: var(--black) !important;
 }
 
 .search-input::placeholder {
@@ -277,7 +318,7 @@ select {
 }
 
 .subtitle {
-  margin-top: 198px;
+  margin-top: 202px;
   margin-bottom: 8px;
   color: var(--grey);
   font-family: Inter;
@@ -312,12 +353,12 @@ select {
   line-height: 18px;
 }
 .recipes-rating {
-  margin-top: 16px;
+  /* margin-top: 16px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 32px 16px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 16px;
   list-style: none;
 }
 .not-active-heart {
@@ -328,6 +369,9 @@ select {
 }
 /*======================================================MEDIA REQUESTS */
 @media screen and (min-width: 767px) {
+  .recipes-rating {
+    gap: 3px;
+  }
   .icon-input {
     top: 18px;
     /* left: 18px; */
@@ -346,7 +390,7 @@ select {
     margin: 0;
   }
   .subtitle {
-    margin-top: 143px;
+    margin-top: 135px;
   }
   .wrapper-for-time-and-area {
     display: block;
@@ -381,6 +425,9 @@ select {
 }
 
 @media screen and (min-width: 1280px) {
+  .subtitle {
+    margin-top: 155px;
+  }
   .recipes-sidebar-search-list {
     width: 235px;
     height: 416px;

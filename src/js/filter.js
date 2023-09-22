@@ -4,6 +4,8 @@ import Notiflix from 'notiflix';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
 import { pagination } from './categories';
 import heartImage from '/src/images/sprite.svg';
+import { onbtnAllCategoriesClick } from "/src/js/categories.js";
+
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
 const selectElCountry = document.querySelector('.select-country');
@@ -27,7 +29,7 @@ if (window.innerWidth < 768) {
   tastyTreatsAPI = new TastyTreatsAPI(9);
 }
 
-pagination.on('afterMove', (eventData) => {
+pagination.on('afterMove', eventData => {
   onPageChange(eventData.page);
 });
 
@@ -181,7 +183,9 @@ export function renderListItem(data) {
   const markup = data
     .map(recipe => {
       const formattedRating = recipe.rating.toFixed(1);
+      const rating = Number.parseInt(recipe.rating);
       const isActive = isRecipeLiked(recipe._id); // Перевіряємо, чи рецепт сподобався користувачеві
+
       return `
               <li  class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${
                 recipe.preview
@@ -206,48 +210,43 @@ export function renderListItem(data) {
                     </button>
                     <h3 class="subtitle">${recipe.title}</h3>
                     <p class="recipes-list-item-text">${recipe.description}</p>
+                    <div class="rating-container">
                       <div class="recipes-rating">
                         <div class="recipes-rating-value">${formattedRating}</div>
                             <div class="recipes-rating-body">
                               <div class="recipes-rating-active"></div>
                               <div class="recipes-rating-items">
-                                  <div class="recipes-rating-item" data-value="1">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="2">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="3">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="4">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
-                                  <div class="recipes-rating-item" data-value="5">
-                                      <svg class="recipes-list-item-starlist-star-svg" width="18" height="18">
-                                          <use href="./images/sprite.svg#icon-star"></use>
-                                      </svg>
-                                  </div>
+                                  ${starsTemplate(rating)}
                               </div>
                           </div>
                         </div>
-                        <button class="recipes-list-see-recipe-btn" type="button" data-id="${recipe._id}">See recipe</button>
+                        <div><button class="recipes-list-see-recipe-btn" type="button" data-id="${
+                          recipe._id
+
+                        }"  style='position: relative; z-index: 0'>See recipe</button></div>
                     </div>
               </li>
     `;
     })
-    .join('');
 
+    .join('');
   recipesListEl.innerHTML = markup;
 }
+
+function starsTemplate(rating) {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    const star = `<div class="recipes-rating-item" data-value="${i}" style="${
+      i <= rating ? 'fill: var(--yellow)' : ''
+    }"><svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
+          <use href="${heartImage}#star-ico"></use>
+        </svg>
+    </div>`;
+    stars.push(star);
+  }
+  return stars.join('');
+}
+
 function isRecipeLiked(recipeId) {
   const storedData = localStorage.getItem('BI8886EB');
   const existingData = storedData ? JSON.parse(storedData) : [];
@@ -263,6 +262,7 @@ resetFilterBtn.addEventListener('click', event => {
   if (event.target.nodeName === 'DIV') {
     return;
   } else {
+    onbtnAllCategoriesClick();
     //ПОВЕРТАЄ КОЛІР  СЕЛЕКТОРУ ДО ДЕФОЛТУ//
     formEl.reset();
     // iconSearchEl.style.fill = 'var(----black-rgba)';

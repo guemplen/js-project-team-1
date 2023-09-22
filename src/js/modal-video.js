@@ -6,7 +6,7 @@
 // !!! import{ # , RecipeDB} from './ #' треба зробити імпорт функції та класів додавання в фаворит
 import { TastyTreats_API } from './api';
 import starImage from '/src/images/sprite.svg';
-import { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 
 const apiModal = new TastyTreats_API();
 
@@ -16,20 +16,9 @@ const seeModal = document.querySelector('.r-modal-backdrop');
 const ratingBtn = document.querySelector('.r-modal-rating-btn');
 const closeBtn = document.querySelector('.r-modal-close-btn');
 const favoriteBtn = document.querySelector('.r-modal-favorite-btn');
+
 // const recipeDB = new #(); // Створення нового екземпляра класу RecipeDB
 let toId = ''; // Ініціалізація змінної toId
-
-// Ця функція встановлює обробник подій для елементу DOM з класом 'фильтру галереї',
-// який викликає функцію openModal при кліку на цей елемент.
-// function eventOpenrModal() {
-//   const getIdElelment = document.querySelector('#'); // !!!
-//   getIdElelment.addEventListener('click', openModal);
-// }
-
-// function eventOpenrModalTwo() {
-//   const getIdElelmentTwo = document.querySelector(''#''); // !!! // https://prnt.sc/9aWEweNfRDan popular recipes
-//   getIdElelmentTwo.addEventListener('click', openModal);
-// }
 
 // Ця функція використовує функцію getRecipeDetails для завантаження даних рецепту на основі змінної toId.
 // Після отримання даних вона вставляє вміст в модальне вікно за допомогою функції addContent.
@@ -60,7 +49,19 @@ function addContent(arr) {
   } = arr;
   // Ця функція приймає об'єкт рецепту arr і генерує рядок HTML, який відображає деталі рецепту. Вона розбирає об'єкт рецепту
   // і використовує його дані для створення HTML-структури, такі як назва, інструкції, інгредієнти тощо.
-
+  const starIcons = Array(5)
+    .fill('')
+    .map((_, index) => {
+      const starClass =
+        index < Math.floor(rating)
+          ? 'r-modal-rating-icon-fill'
+          : 'r-modal-rating-icon-empty';
+      return `
+      <svg class="${starClass}" width="18" height="18">
+        <use href="${starImage}#star-ico"></use>
+      </svg>
+    `;
+    });
   // / Оголошення двох порожніх рядків для зберігання тегів і інгредієнтів
   let newTags = '';
   tags.forEach(element => {
@@ -91,21 +92,7 @@ function addContent(arr) {
       1
     )}</div>
     <div class="r-modal-star-wrap">
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href=".${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
-        <svg class="r-modal-rating-icon" width="18" height="18">
-            <use href="${starImage}#icon-star"></use>
-        </svg>
+        ${starIcons.join('')}
     </div>
     <div class="r-modal-time">${time} min</div></div></div>
     <div class="r-modal-ingerdients-container">${newIngredients}</div>
@@ -134,6 +121,7 @@ function openModal(recipeId) {
   // при кліку на кнопку "Закрити"
   favoriteBtn.addEventListener('click', favoriteBtnHandleFunction); // Додавання обробник події для виклику функції
   //  "favoriteBtnHandleFunction" при кліку на кнопку "Додати в обране"
+  updateFavoriteButtonState(recipeId);
 }
 
 function closeModal(event) {
@@ -165,28 +153,55 @@ function closeOnEscape(e) {
     closeModal();
   }
 }
-function selectFavoriteRecipe(recipeInfo) {
-  recipeDB.getFromDB().map(recipe => {
-    if (recipe.id !== recipeInfo.id) {
-      recipeDB.saveIntoDB(recipeInfo);
-      favoriteBtn.textContent = 'Remove from favorites';
-    } else if (recipe.id === recipeInfo.id) {
-      recipeDB.removeFromDB(recipeInfo);
-      favoriteBtn.textContent = 'Add to favorite';
-    }
-  });
-}
+
 function favoriteBtnHandleFunction(e) {
   const parentWrap = e.target.parentNode;
   const siblingWrap = parentWrap.previousElementSibling;
-  recipeInfo = {
-    id: siblingWrap.querySelector('.r-modal-name').dataset.id,
-    name: siblingWrap.querySelector('.r-modal-name').textContent,
-    image: siblingWrap.querySelector('.r-modal-video').poster,
-    rating: siblingWrap.querySelector('.r-modal-rating').textContent,
-    description: siblingWrap.querySelector('.r-modal-instructions').textContent,
-  };
-  selectFavoriteRecipe(recipeInfo);
+  const recipeId = siblingWrap.querySelector('.r-modal-name').dataset.id;
+  const favoriteRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
+  const isFavorite = favoriteRecipes.includes(recipeId);
+
+  if (isFavorite) {
+    const updatedFavoriteRecipes = favoriteRecipes.filter(
+      id => id !== recipeId
+    );
+    localStorage.setItem('BI8886EB', JSON.stringify(updatedFavoriteRecipes));
+    favoriteBtn.textContent = 'Add to favorite';
+    Notiflix.Notify.info('Recipe removed from favorites');
+  } else {
+    favoriteRecipes.push(recipeId);
+    localStorage.setItem('BI8886EB', JSON.stringify(favoriteRecipes));
+    favoriteBtn.textContent = 'Remove from favorites';
+    Notiflix.Notify.success('Recipe added to favorites');
+  }
 }
 
-export { eventOpenrModal, eventOpenrModalTwo, toId, closeModal, openModal };
+ratingBtn.addEventListener('click', onRatingBtnClick);
+function onRatingBtnClick(event) {
+  const modalTitle = document.querySelector('.r-modal-name');
+  const modal = document.querySelector('.modal');
+  const titleId = document.querySelector('.idTitle');
+  modal.classList.remove('modal-hidden');
+  modal.classList.add('modal-visible');
+
+  const idValue = modalTitle.dataset.id;
+  titleId.setAttribute('data-id', `${idValue}`);
+}
+
+const backdrop = document.querySelector('.r-modal-backdrop');
+backdrop.addEventListener('click', closeOnBackdropClick);
+function closeOnBackdropClick(event) {
+  if (event.target === backdrop) {
+    closeModal();
+  }
+}
+
+function updateFavoriteButtonState(recipeId) {
+  const favoriteRecipes = JSON.parse(localStorage.getItem('BI8886EB')) || [];
+  const isFavorite = favoriteRecipes.includes(recipeId);
+  favoriteBtn.textContent = isFavorite
+    ? 'Remove from favorites'
+    : 'Add to favorite';
+}
+
+export { toId, closeModal, openModal };
