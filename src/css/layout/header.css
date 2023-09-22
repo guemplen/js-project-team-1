@@ -67,7 +67,7 @@
 }
 
 /** MODAL **/
-.backdrop {
+.backdrop-burger {
   z-index: 9999999999;
   visibility: hidden;
   position: fixed;
@@ -94,14 +94,14 @@
   line-height: normal;
 }
 
-.modal-home:hover{
-font-weight: 600;
-color: var(--hover-modal-text);
+.modal-home:hover {
+  font-weight: 600;
+  color: var(--hover-modal-text);
 }
 
-.modal-home:focus{
-font-weight: 600;
-color: var(--hover-modal-text);
+.modal-home:focus {
+  font-weight: 600;
+  color: var(--hover-modal-text);
 }
 
 .modal-fav {

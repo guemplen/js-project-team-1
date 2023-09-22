@@ -1,6 +1,6 @@
 //* MODULE HEADER*//
-const modalMenu = document.querySelector('.backdrop');
-const openMenuBtn = document.querySelector('.js-open-menu');
+const modalMenu = document.querySelector('.backdrop-burger');
+const openMenuBtn = document.querySelector('.js-open-menu-burger');
 const closeMenuBtn = document.querySelector('.js-close-menu');
 
 function openModal() {

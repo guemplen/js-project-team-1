@@ -39,7 +39,7 @@
   margin-left: 0px;
   gap: 12px;
 }
-.rating-wraper{
+.rating-wraper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -53,8 +53,8 @@
   gap: 10px;
   border: none;
   border-radius: 8px;
-  background: #9BB537;
-  color: #F8F8F8;
+  background: #9bb537;
+  color: #f8f8f8;
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
@@ -72,15 +72,15 @@
     max-width: 768px;
     padding: 0 32px;
   }
-    .favorites-list {
-      gap: 16px;
-      margin-bottom: 64px;
-      margin-top: 32px;
-    }
-  
-    .fav-recipes {
-      width: 224px;
-    }
+  .favorites-list {
+    gap: 16px;
+    margin-bottom: 64px;
+    margin-top: 32px;
+  }
+
+  .fav-recipes {
+    width: 224px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -190,16 +190,16 @@
     height: 335px;
     padding: 0;
   }
-  
+
   .favorites-list .recipes-list {
     gap: 16px;
-   }
-   .recipes-list-wraper {
+  }
+  .recipes-list-wraper {
     padding: 16px;
-   }
-   .recipes-list-wraper .subtitle {
+  }
+  .recipes-list-wraper .subtitle {
     margin-top: 198px;
-   }
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -247,16 +247,16 @@
     line-height: 1.25;
   }
   .favorites-list .recipes-list .recipes-list-item {
-     width: 224px;
-     height: 244px;
-     padding: 0;
+    width: 224px;
+    height: 244px;
+    padding: 0;
   }
   .favorites-list .recipes-list {
-     gap: 16px;
+    gap: 16px;
   }
   .recipes-list-wraper {
-     padding: 16px;
-   }
+    padding: 16px;
+  }
   .recipes-list-wraper .subtitle {
     margin-top: 108px;
   }
@@ -283,13 +283,13 @@
   .favorites-list .recipes-list {
     gap: 16px;
     padding: 0%;
-    }
+  }
   .recipes-list-wraper .subtitle {
     margin-top: 150px;
-    }
+  }
 }
 
 .scroll-categories::-webkit-scrollbar {
   width: 3px;
-  background-color: #F5F5F5, var(--black-05);
+  background-color: #f5f5f5, var(--black-05);
 }

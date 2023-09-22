@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import { TastyTreatsAPI } from './recipesfilter-api-js';
 import { pagination } from './categories';
 import heartImage from '/src/images/sprite.svg';
-import { onbtnAllCategoriesClick } from "/src/js/categories.js";
+import { onbtnAllCategoriesClick } from '/src/js/categories.js';
 
 // //---------------------------------------------------------  REFS
 const selectElTime = document.querySelector('.select-time');
@@ -222,7 +222,6 @@ export function renderListItem(data) {
                         </div>
                         <div><button class="recipes-list-see-recipe-btn" type="button" data-id="${
                           recipe._id
-
                         }"  style='position: relative; z-index: 0'>See recipe</button></div>
                     </div>
               </li>
