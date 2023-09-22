@@ -107,6 +107,7 @@ function createGalleryCards (arr) {
           <li class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${productinfo.thumb}); background-size: cover;
               background-position: center;
               background-repeat: no-repeat">
+              <div class="recipes-list-wraper">
               <button type="button" class="recipes-list-item-like-btn">
                <svg class="recipes-list-item-like-btn-img" width="22" height="22">
                  <use class="${isActive ? 'active-heart' : 'not-active-heart'}" href="${spriteUrl}#icon-heart" data-resept-id=${productinfo._id}></use>
@@ -114,17 +115,20 @@ function createGalleryCards (arr) {
               </button>
                <h3 class="subtitle">${productinfo.title}</h3>
                <p class="recipes-list-item-text">${productinfo.description}</p>
-               <div class="recipes-rating">
+               <div class="rating-wraper">
+                 <div class="recipes-rating">
                <div class="recipes-rating-body">
                 <div class="recipes-rating-value">${roundedNumber}</div>
               <div class="recipes-rating-active"></div>
-              <div class="recipes-rating-items">
-          
-             </div>
-             </div>
-             </div>
+              <div class="recipes-rating-items"> </div>
+               </div>
+               </div>
                <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id} style='position: relative; z-index: 0'>See recipe</button>
+               </div>
+              
+              </div>
              </div>
+              
           </li>
             
  `
