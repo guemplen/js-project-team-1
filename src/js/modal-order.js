@@ -4,17 +4,32 @@ const closeOrderButton = document.querySelector('.js-cross-order');
 const orderNowModal = document.querySelector('.order-now-div');
 // console.log(orderNowModal);
 
-closeOrderButton.addEventListener('click', () => {
+function closeModal() {
   orderNowModal.style.display = 'none';
+  document.body.classList.remove('body-no-scroll');
+}
+closeOrderButton.addEventListener('click', () => {
+  closeModal();
 });
+
+function closeModalOnEsc(event) {
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    closeModal();
+  }
+}
+function openModalOrder(event) {
+  document.body.classList.add('body-no-scroll');
+  orderNowModal.style.display = 'block';
+  document.addEventListener('keydown', closeModalOnEsc);
+}
 
 const openOrderNow = document.querySelector('.js-order-now');
 openOrderNow.addEventListener('click', () => {
-  orderNowModal.style.display = 'block';
+  openModalOrder();
 });
 const cartModal = document.querySelector('.js-cart');
 cartModal.addEventListener('click', () => {
-  orderNowModal.style.display = 'block';
+  openModalOrder();
 });
 
 //*Submit
