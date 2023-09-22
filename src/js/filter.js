@@ -222,8 +222,8 @@ export function renderListItem(data) {
                         </div>
                         <div><button class="recipes-list-see-recipe-btn" type="button" data-id="${
                           recipe._id
-                        }">See recipe</button></div>
-                    </div>
+
+                        }"  style='position: relative; z-index: 0'>See recipe</button></div>
                     </div>
               </li>
     `;
