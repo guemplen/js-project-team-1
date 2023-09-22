@@ -17,10 +17,6 @@ cartModal.addEventListener('click', () => {
   orderNowModal.style.display = 'block';
 });
 
-orderNowModal.addEventListener('click', () => {
-  orderNowModal.style.display = 'none';
-});
-
 //*Submit
 export class TastyTreatsAPI {
   constructor() {
