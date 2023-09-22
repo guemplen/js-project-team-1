@@ -43,6 +43,19 @@ const productsListEl = document.querySelector(".recipes-list");
 const divEl = document.querySelector(".favorites-error");
 const divButtonEl = document.querySelector(".js-div-button");
 const allCategoriesEl = document.querySelector(".js-all-categories");
+const btnsEl = document.querySelector(".js-cart");
+const orderNowModal = document.querySelector('.order-now-div');
+const closeOrderButton = document.querySelector('.js-cross-order');
+const houmBtEl = document.querySelector('.site-nav-home');
+const favorBtEl = document.querySelector('.site-nav-fav');
+
+
+
+houmBtEl.style.color = 'var(--black)'
+
+favorBtEl.style.color = 'var(--green)'
+
+// console.log(openMenuBtn);
 
 const unsplashAPI = new UnsplashAPI();
 unsplashAPI.query = 0;
@@ -120,7 +133,7 @@ function createGalleryCards (arr) {
                <div class="recipes-rating-body">
                 <div class="recipes-rating-value">${roundedNumber}</div>
               <div class="recipes-rating-active"></div>
-              <div class="recipes-rating-items"> </div>
+              <div class="recipes-rating-items">${starsTemplate(roundedNumber)} </div>
                </div>
                </div>
                <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id} style='position: relative; z-index: 0'>See recipe</button>
@@ -270,5 +283,50 @@ buttonEl.addEventListener('click', function (event) {
 
   openModal(btnId);
 
+});
+
+
+function starsTemplate(rating) {
+
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+
+    const star = `<div class="recipes-rating-item" data-value="${i}" style="${
+
+    i <= rating ? 'fill: var(--yellow)' : ''
+      
+    }"><svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
+
+          <use href="${spriteUrl}#icon-star"></use>
+
+        </svg>
+
+    </div>`;
+
+    stars.push(star);
+
+  }
+
+  return stars.join('');
+
+}
+
+const onOpenModal = event => {
+  
+  orderNowModal.style.display = 'block';
+
+}
+
+btnsEl.addEventListener('click', onOpenModal)
+
+// orderNowModal.addEventListener('click', () => {
+
+//   orderNowModal.style.display = 'none';
+
+// })
+
+closeOrderButton.addEventListener('click', () => {
+  orderNowModal.style.display = 'none';
 });
 
