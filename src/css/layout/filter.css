@@ -19,6 +19,12 @@
   width: 10px;
 }
 
+.btn-all-categories:active{
+  background-color: var(--green);
+  color: var(--white);
+  border: none;
+}
+
 .btn-all-categories {
   width: 176px;
   height: 50px;
@@ -36,7 +42,8 @@
 }
 .btn-all-categories:hover,
 .btn-all-categories:focus {
-  color: rgba(248, 248, 248, 1);
+  border: none;
+  color: var(--white);
   background: var(--green);
 }
 .recipes-sidebar-search-list {
@@ -79,12 +86,34 @@
   transition: var(--transition-dur-and-func);
 }
 
-.btn-for-filter:hover {
+.btn-for-filter:hover,
+.btn-for-filter:focus{
+  color: var(--green);
+  background-color: transparent!important;
+}
+
+.recipes-list-see-recipe-btn{
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--green);
+  color: var(--modal-text-black);
+}
+
+.rating-container {
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+
+.btn-active {
+  border: none;
+  color: var(--white);
   background-color: var(--green);
 }
-/* .btn-active {
-  color: var(--green);
-} */
+
 /* ==============================================FORM FILTER */
 .filter-form {
   margin-top: 40px;
