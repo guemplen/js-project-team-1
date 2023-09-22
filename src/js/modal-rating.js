@@ -2,7 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 const modal = document.querySelector('.modal');
 const ratingForm = document.getElementById('rating-form');
 const ratingItems = document.querySelectorAll('.simple-rating__item');
-const emailInput = document.getElementById('email');
+const emailInput = document.querySelector('.rating-input');
 const ratingCountDisplay = document.querySelector('.rating-count');
 const btnEl = document.querySelector('.button-form-rating');
 const idTitle = document.querySelector('.idTitle');
