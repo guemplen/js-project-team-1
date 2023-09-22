@@ -130,6 +130,7 @@
 }
 
 .favorites-error-text {
+  color: var(--black);
   margin: auto;
   text-align: center;
   font-size: 14px;

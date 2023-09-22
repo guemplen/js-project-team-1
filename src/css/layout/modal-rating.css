@@ -29,10 +29,12 @@
   /* text-align: center; */
 }
 .main-title {
+  color: var(--black);
   text-align: center;
   font-size: 25px;
 }
 .rating-count {
+  color: var(--black);
   font-size: 40px;
   text-align: center;
 }
