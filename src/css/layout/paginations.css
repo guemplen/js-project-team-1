@@ -274,4 +274,8 @@
     }
 }
 
-
+@media screen and (min-width: 1200px) {
+    .tui-pagination {
+        padding-left: 290px;
+    }
+}

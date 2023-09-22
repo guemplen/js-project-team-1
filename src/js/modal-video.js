@@ -16,6 +16,7 @@ const seeModal = document.querySelector('.r-modal-backdrop');
 const ratingBtn = document.querySelector('.r-modal-rating-btn');
 const closeBtn = document.querySelector('.r-modal-close-btn');
 const favoriteBtn = document.querySelector('.r-modal-favorite-btn');
+
 // const recipeDB = new #(); // Створення нового екземпляра класу RecipeDB
 let toId = ''; // Ініціалізація змінної toId
 
@@ -57,7 +58,7 @@ function addContent(arr) {
           : 'r-modal-rating-icon-empty';
       return `
       <svg class="${starClass}" width="18" height="18">
-        <use href="${starImage}#icon-star"></use>
+        <use href="${starImage}#star-ico"></use>
       </svg>
     `;
     });
@@ -172,6 +173,26 @@ function favoriteBtnHandleFunction(e) {
     localStorage.setItem('BI8886EB', JSON.stringify(favoriteRecipes));
     favoriteBtn.textContent = 'Remove from favorites';
     Notiflix.Notify.success('Recipe added to favorites');
+  }
+}
+
+ratingBtn.addEventListener('click', onRatingBtnClick);
+function onRatingBtnClick(event) {
+  const modalTitle = document.querySelector('.r-modal-name');
+  const modal = document.querySelector('.modal');
+  const titleId = document.querySelector('.idTitle');
+  modal.classList.remove('modal-hidden');
+  modal.classList.add('modal-visible');
+
+  const idValue = modalTitle.dataset.id;
+  titleId.setAttribute('data-id', `${idValue}`);
+}
+
+const backdrop = document.querySelector('.r-modal-backdrop');
+backdrop.addEventListener('click', closeOnBackdropClick);
+function closeOnBackdropClick(event) {
+  if (event.target === backdrop) {
+    closeModal();
   }
 }
 
