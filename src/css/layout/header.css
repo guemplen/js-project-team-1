@@ -124,6 +124,9 @@
   right: 20px;
   top: 20px;
 }
+.body-no-scroll {
+  overflow: hidden;
+}
 /** SWITCH **/
 
 .switch {
