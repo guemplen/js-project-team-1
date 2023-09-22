@@ -43,6 +43,15 @@ const productsListEl = document.querySelector(".recipes-list");
 const divEl = document.querySelector(".favorites-error");
 const divButtonEl = document.querySelector(".js-div-button");
 const allCategoriesEl = document.querySelector(".js-all-categories");
+const btnsEl = document.querySelector("#order");
+const orderNowModal = document.querySelector('.order-now-div');
+const houmBtEl = document.querySelector('.site-nav-home');
+const favorBtEl = document.querySelector('.site-nav-fav');
+
+
+houmBtEl.style.color = 'var(--black)'
+
+favorBtEl.style.color = 'var(--green)'
 
 const unsplashAPI = new UnsplashAPI();
 unsplashAPI.query = 0;
@@ -104,7 +113,7 @@ function createGalleryCards (arr) {
      const isActive = isRecipeLiked(productinfo._id)
 
          return  `
-          <li class="recipes-list-item" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${productinfo.thumb}); background-size: cover;
+          <li class="recipes-list-item list" style="background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 4.82%, rgba(5, 5, 5, 0.00) 108.72%), url(${productinfo.thumb}); background-size: cover;
               background-position: center;
               background-repeat: no-repeat">
               <button type="button" class="recipes-list-item-like-btn">
@@ -116,14 +125,11 @@ function createGalleryCards (arr) {
                <p class="recipes-list-item-text">${productinfo.description}</p>
                <div class="recipes-rating">
                <div class="recipes-rating-body">
-                <div class="recipes-rating-value">${roundedNumber}</div>
-              <div class="recipes-rating-active"></div>
-              <div class="recipes-rating-items">
-          
-             </div>
-             </div>
-             </div>
-               <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id} style='position: relative; z-index: 0'>See recipe</button>
+                  <div class="recipes-rating-value">${roundedNumber}</div>
+                  <div class="recipes-rating-active"></div>
+                  <div class="recipes-rating-items"> ${starsTemplate(roundedNumber)}</div>
+                  </div> <button class="recipes-list-see-recipe-btn" type="button" data-resept-id=${productinfo._id}>See recipe</button>   </div>
+               
              </div>
           </li>
             
@@ -264,7 +270,51 @@ buttonEl.addEventListener('click', function (event) {
 
   const btnId = event.target.dataset.reseptId;
 
+  console.log(btnId)
+
   openModal(btnId);
 
 });
 
+
+
+
+function starsTemplate(rating) {
+
+  const stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+
+    const star = `<div class="recipes-rating-item" data-value="${i}" style="${
+
+    i <= rating ? 'fill: var(--yellow)' : ''
+      
+    }"><svg class="recipes-list-item-starlist-star-svg" width="13" height="13">
+
+          <use href="${spriteUrl}#icon-star"></use>
+
+        </svg>
+
+    </div>`;
+
+    stars.push(star);
+
+  }
+
+  return stars.join('');
+
+}
+
+const onOpenModal = event => {
+  
+  orderNowModal.style.display = 'block';
+
+}
+
+btnsEl.addEventListener('click', onOpenModal)
+
+orderNowModal.addEventListener('click', () => {
+
+  orderNowModal.style.display = 'none';
+
+})
